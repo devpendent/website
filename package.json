@@ -19,6 +19,7 @@
     "react-helmet": "5.2.0"
   },
   "devDependencies": {
+    "@snowcoders/sortier": "2.5.4",
     "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-react": "7.0.2",
@@ -40,10 +41,20 @@
     "linters": {
       "src/**/*.js": [
         "prettier-standard",
+        "npx sortier",
         "eslint --ignore-path .gitignore --fix",
         "git add"
+      ],
+      "src/**/*.json": [
+        "prettier-standard",
+        "npx sortier",
+        "git add"
       ]
-    }
+    },
+    "ignore": [
+      "**/package.json",
+      "**/yarn.lock"
+    ]
   },
   "keywords": [
     "devpendent",
