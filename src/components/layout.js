@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
+import Header from 'components/header'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Header from './header'
 import './layout.css'
 
 const Layout = ({ children }) => (

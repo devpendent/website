@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@snowcoders/sortier": "2.5.4",
+    "babel-jest": "24.7.1",
+    "babel-preset-gatsby": "0.1.11",
     "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-react": "7.0.2",
@@ -29,8 +31,11 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-standard": "4.0.0",
     "husky": "1.3.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.7.1",
     "lint-staged": "8.1.5",
-    "prettier-standard": "9.1.1"
+    "prettier-standard": "9.1.1",
+    "react-testing-library": "6.1.2"
   },
   "husky": {
     "hooks": {
@@ -43,7 +48,8 @@
         "prettier-standard",
         "npx sortier",
         "eslint --ignore-path .gitignore --fix",
-        "git add"
+        "git add",
+        "jest --findRelatedTests"
       ],
       "src/**/*.json": [
         "prettier-standard",
@@ -68,7 +74,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
