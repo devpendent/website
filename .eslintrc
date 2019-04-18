@@ -1,0 +1,18 @@
+{
+  "extends": ["standard", "standard-react"],
+  "parser": "babel-eslint",
+  "globals": {
+    "describe": true,
+    "it": true
+  },
+  "rules": {
+    "import/first": "off",
+    "import/export": "off",
+    "function-paren-newline": ["error", "consistent"],
+    "no-console": "error",
+    "react/jsx-curly-brace-presence": ["error", "never"]
+  },
+  "env": {
+    "jest": true
+  }
+}
