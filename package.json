@@ -1,31 +1,74 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "@devpendent/website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Open Sourced Platform for Indonesian Election Real Count",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Zain Fathoni <zain.fathoni@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.10",
-    "gatsby": "^2.3.16",
-    "gatsby-image": "^2.0.37",
-    "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-manifest": "^2.0.28",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.0.32",
-    "gatsby-source-filesystem": "^2.0.29",
-    "gatsby-transformer-sharp": "^2.1.17",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-bulma-components": "^2.3.0",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "gatsby": "2.3.16",
+    "gatsby-plugin-emotion": "4.0.6",
+    "gatsby-image": "2.0.37",
+    "gatsby-plugin-manifest": "2.0.28",
+    "gatsby-plugin-offline": "2.0.25",
+    "gatsby-plugin-react-helmet": "3.0.12",
+    "gatsby-plugin-sharp": "2.0.32",
+    "gatsby-source-filesystem": "2.0.29",
+    "gatsby-transformer-sharp": "2.1.17",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-bulma-components": "2.3.0",
+    "react-dom": "16.8.6",
+    "react-helmet": "5.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "@snowcoders/sortier": "2.5.4",
+    "babel-jest": "24.7.1",
+    "babel-preset-gatsby": "0.1.11",
+    "eslint": "5.16.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-config-standard-react": "7.0.2",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-standard": "4.0.0",
+    "husky": "1.3.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.7.1",
+    "lint-staged": "8.1.5",
+    "prettier-standard": "9.1.1",
+    "react-testing-library": "6.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "npx sortier",
+        "eslint --ignore-path .gitignore --fix",
+        "git add",
+        "jest --findRelatedTests"
+      ],
+      "src/**/*.json": [
+        "prettier-standard",
+        "npx sortier",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/package.json",
+      "**/yarn.lock"
+    ]
   },
   "keywords": [
-    "gatsby"
+    "devpendent",
+    "election",
+    "indonesia"
   ],
   "license": "MIT",
   "scripts": {
@@ -34,13 +77,13 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/devpendent/website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/devpendent/website/issues"
   }
 }
