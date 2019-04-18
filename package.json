@@ -40,7 +40,7 @@
     "linters": {
       "src/**/*.js": [
         "prettier-standard",
-        "eslint --ignore-path .gitignore",
+        "eslint --ignore-path .gitignore --fix",
         "git add"
       ]
     }
