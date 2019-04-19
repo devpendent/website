@@ -24,7 +24,7 @@
     "react-helmet": "5.2.0"
   },
   "devDependencies": {
-    "@snowcoders/sortier": "2.5.4",
+    "@snowcoders/sortier": "2.6.0",
     "babel-jest": "24.7.1",
     "babel-preset-gatsby": "0.1.11",
     "eslint": "5.16.0",
