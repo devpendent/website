@@ -18,11 +18,11 @@ const Header = ({ siteTitle }) => (
     >
       <h1 style={{ margin: 0 }}>
         <Link
-          to='/'
           style={{
             color: `white`,
             textDecoration: `none`
           }}
+          to='/'
         >
           {siteTitle}
         </Link>

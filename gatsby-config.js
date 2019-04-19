@@ -5,6 +5,8 @@ module.exports = {
     author: `@zainfathoni`
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,4 +33,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ]
-}
+};
