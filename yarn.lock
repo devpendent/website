@@ -1087,19 +1087,20 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@snowcoders/sortier@2.5.4":
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/@snowcoders/sortier/-/sortier-2.5.4.tgz#317bc43d795181a10bd2708c6c574bf6df30c66f"
-  integrity sha512-cCYCtinBQNBdrdkK08WeGJDs0rw/v1H149qXhlyZap9gAK0ixvsjTxqBQJFshIhczlT9euAzYXUqxjgdNjC6Rw==
+"@snowcoders/sortier@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@snowcoders/sortier/-/sortier-2.6.0.tgz#8a496f160f37836410e402df945a1f631051d962"
+  integrity sha512-UPwW5d+xiH6nq+EiiHvlsYKq7DE4QEtZ26sNH2v7rGKPqQSTpv8GpsBp/8YbTmDk+28K8TcxjFNQsF2al+x+0Q==
   dependencies:
     "@typescript-eslint/typescript-estree" "1.6.0"
     angular-html-parser "1.2.0"
     cosmiconfig "5.2.0"
-    flow-parser "0.96.1"
+    flow-parser "0.97.0"
     fs "0.0.1-security"
     globby "9.2.0"
-    postcss-less "^3.1.0"
-    postcss-scss "^2.0.0"
+    ignore "5.1.0"
+    postcss-less "3.1.0"
+    postcss-scss "2.0.0"
     rimraf "2.6.3"
     typescript "3.4.3"
 
@@ -5103,10 +5104,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
   integrity sha512-R+H8IZclI8AAkSBRQJLVOsxwAoHd6WC40b4QTNWIjzAa6BXOBfQcM587MXDTVPeYaopFNWHUFLx7eNmHDSxMWg==
 
-flow-parser@0.96.1:
-  version "0.96.1"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.96.1.tgz#477affba976b7e22963aa9a76888c30c783f63bd"
-  integrity sha512-T8TZV/L7Iy8sp7eoF1G7OLmXGWL25/GflyAK4W1fc9/3ny7RE0cdpWT69nEIoHWsWZ8nFpQCN791hXTddfRKyg==
+flow-parser@0.97.0:
+  version "0.97.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.97.0.tgz#e52ffdb3f0a9c96b6969178d39fcaf27b292a5ba"
+  integrity sha512-+7ubRHBEF6n4QQNUIDCVdqD7TuahvHUBzzj7Lf9u1Pn3i6UplL6SRdP0s9/Hdn+4BDX3zJG1HWkcf4h5IQMvvQ==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -6335,6 +6336,11 @@ ignore-walk@^3.0.1:
   integrity sha512-DTVlMx3IYPe0/JJcYP7Gxg7ttZZu3IInhuEhbchuqneY9wWe5Ojy2mXLBaQFUQmo0AW2r3qG7m1mg86js+gnlQ==
   dependencies:
     minimatch "^3.0.4"
+
+ignore@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.0.tgz#a949efb645e5d67fd78e46f470bee6b8c5d862f9"
+  integrity sha512-dJEmMwloo0gq40chdtDmE4tMp67ZGwN7MFTgjNqWi2VHEi5Ya6JkuvPWasjcAIm7lg+2if8xxn5R199wspcplg==
 
 ignore@^3.3.5:
   version "3.3.10"
@@ -9714,12 +9720,12 @@ postcss-flexbugs-fixes@^3.0.0:
   dependencies:
     postcss "^6.0.1"
 
-postcss-less@^3.1.0:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-3.1.4.tgz#369f58642b5928ef898ffbc1a6e93c958304c5ad"
-  integrity sha512-7TvleQWNM2QLcHqvudt3VYjULVB49uiW6XzEUFmvwHzvsOEF5MwBrIXZDJQvJNFGjJQTzSzZnDoCJ8h/ljyGXA==
+postcss-less@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-3.1.0.tgz#0e14a80206b452f44d3a09d082fa72645e8168cc"
+  integrity sha512-+fDH2A9zV8B4gFu3Idhq8ma09/mMBXXc03T2lL9CHjBQqKrfUit+TrQrnojc6Y4k7N4E+tyE1Uj5U1tcoKtXLQ==
   dependencies:
-    postcss "^7.0.14"
+    postcss "^7.0.3"
 
 postcss-load-config@^2.0.0:
   version "2.0.0"
@@ -9942,7 +9948,7 @@ postcss-reduce-transforms@^4.0.2:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-scss@^2.0.0:
+postcss-scss@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-2.0.0.tgz#248b0a28af77ea7b32b1011aba0f738bda27dea1"
   integrity sha512-um9zdGKaDZirMm+kZFKKVsnKPF7zF7qBAtIfTSnZXD1jZ0JNZIxdB6TxQOjCnlSzLRInVl2v3YdBh/M881C4ug==
@@ -10000,7 +10006,7 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.5:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.3, postcss@^7.0.5:
   version "7.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
   integrity sha512-NsbD6XUUMZvBxtQAJuWDJeeC4QFsmWsfozWxCJPWf3M55K9iu2iMDaKqyoOdTJ1R4usBXuxlVFAIo8rZPQD4Bg==
