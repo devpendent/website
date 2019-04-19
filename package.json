@@ -1,7 +1,7 @@
 {
   "name": "@devpendent/website",
-  "private": true,
-  "description": "Open Sourced Platform for Indonesian Election Real Count",
+  "private": false,
+  "description": "An Open Sourced Platform for Indonesian Election Real Count",
   "version": "0.1.0",
   "author": "Zain Fathoni <zain.fathoni@gmail.com>",
   "dependencies": {
@@ -80,10 +80,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn develop",
+    "format:prettier": "prettier-standard --write {src/**/*,gatsby-*}.{js,json}",
+    "format:lint": "eslint --ignore-path .gitignore --fix {src/**/*,gatsby-*}.js",
+    "format": "yarn format:prettier && yarn format:lint",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "jest"
   },
