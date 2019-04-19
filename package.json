@@ -60,6 +60,12 @@
         "prettier-standard",
         "npx sortier",
         "git add"
+      ],
+      "gatsby-*.js": [
+        "prettier-standard",
+        "eslint --ignore-path .gitignore --fix",
+        "git add",
+        "jest --findRelatedTests"
       ]
     },
     "ignore": [
