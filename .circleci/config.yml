@@ -27,6 +27,7 @@ jobs:
             # - v1-dependencies-
 
       - run: yarn
+      - run: yarn global add codecov
 
       - save_cache:
           paths:
@@ -36,6 +37,7 @@ jobs:
 
       # run tests!
       - run: yarn test
+      - run: codecov
 
       # Upload reports to Codecov
       # - run: bash <(curl -s https://codecov.io/bash) -t TOKEN
