@@ -1114,14 +1114,15 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@snowcoders/sortier@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@snowcoders/sortier/-/sortier-2.6.0.tgz#8a496f160f37836410e402df945a1f631051d962"
-  integrity sha512-UPwW5d+xiH6nq+EiiHvlsYKq7DE4QEtZ26sNH2v7rGKPqQSTpv8GpsBp/8YbTmDk+28K8TcxjFNQsF2al+x+0Q==
+"@snowcoders/sortier@2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@snowcoders/sortier/-/sortier-2.6.1.tgz#9f18c73a9c9df414fc7fb7b6f94ca38febe0717d"
+  integrity sha512-jv+kxf4tiWJ4ItlPnDXlMZnuKUu5m7J0BLdxzpYVXqZ/HdCl2pojFOkwYQlMegCXBx7GTJCsl0KBp/nvdN+DYA==
   dependencies:
     "@typescript-eslint/typescript-estree" "1.6.0"
     angular-html-parser "1.2.0"
     cosmiconfig "5.2.0"
+    find-up "3.0.0"
     flow-parser "0.97.0"
     fs "0.0.1-security"
     globby "9.2.0"
@@ -5069,6 +5070,13 @@ find-root@^1.1.0:
   resolved "https://registry.yarnpkg.com/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
   integrity sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==
 
+find-up@3.0.0, find-up@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
+  integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
+  dependencies:
+    locate-path "^3.0.0"
+
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -5083,13 +5091,6 @@ find-up@^2.0.0, find-up@^2.1.0:
   integrity sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
   dependencies:
     locate-path "^2.0.0"
-
-find-up@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
-  integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
-  dependencies:
-    locate-path "^3.0.0"
 
 find-versions@^3.0.0:
   version "3.0.0"
