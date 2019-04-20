@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image renders correctly 1`] = `
+<div>
+  <header
+    style="background: rebeccapurple; margin-bottom: 1.45rem;"
+  >
+    <div
+      style="margin: 0px auto; max-width: 960px; padding: 1.45rem 1.0875rem;"
+    >
+      <h1
+        style="margin: 0px;"
+      >
+        <a
+          href="/"
+          style="color: white; text-decoration: none;"
+        >
+          Devpendent
+        </a>
+      </h1>
+    </div>
+  </header>
+  <div
+    style="margin: 0px auto; max-width: 960px; padding: 0px 1.0875rem 1.45rem 1.0875rem;"
+  >
+    <main>
+      <h1>
+        Devpendent Website
+      </h1>
+    </main>
+    <footer>
+      © 
+      2019
+      , Built with
+       
+      <a
+        href="https://www.gatsbyjs.org"
+      >
+        Gatsby
+      </a>
+    </footer>
+  </div>
+</div>
+`;
