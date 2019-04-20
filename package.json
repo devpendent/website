@@ -20,7 +20,6 @@
     "gatsby-plugin-sharp": "2.0.35",
     "gatsby-source-filesystem": "2.0.29",
     "gatsby-transformer-sharp": "2.1.18",
-    "i": "^0.3.6",
     "node-sass": "4.11.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
