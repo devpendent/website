@@ -92,7 +92,10 @@
     "format": "yarn format:prettier && yarn format:lint",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "validate": "yarn test:coverage"
   },
   "repository": {
     "type": "git",
