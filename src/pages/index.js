@@ -10,7 +10,7 @@ const IndexPage = () => (
     <h1>Hi people</h1>
 
     <div>hello d</div>
-    <i className='fa fa-facebook-square' />
+
     <FontAwesomeIcon icon='fa-facebook-square' />
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
