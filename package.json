@@ -89,7 +89,8 @@
     "serve": "gatsby serve",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "validate": "yarn test:coverage"
   },
   "repository": {
     "type": "git",
