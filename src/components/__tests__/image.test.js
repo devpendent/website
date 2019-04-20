@@ -25,10 +25,7 @@ describe('Image', () => {
   })
 
   it('renders correctly', () => {
-    render(
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-    )
+    const { container } = render(<Image />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
