@@ -1,4 +1,4 @@
-# Devpendent Website 🏍
+# Devpendent Website 👨🏻‍💻 [![CircleCI](https://circleci.com/gh/devpendent/website/tree/master.svg?style=shield)](https://circleci.com/gh/devpendent/website/tree/master) [![codecov](https://codecov.io/gh/devpendent/website/branch/master/graph/badge.svg)](https://codecov.io/gh/devpendent/website)
 
 👨🏻‍💻 An Open Sourced Platform for Indonesian Election Real Count<br>
 💻 [Live site](https://devpendent.netlify.com/)
