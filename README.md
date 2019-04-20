@@ -1,4 +1,4 @@
-# Devpendent Website 👨🏻‍💻 [![CircleCI](https://circleci.com/gh/devpendent/website/tree/master.svg?style=shield)](https://circleci.com/gh/devpendent/website/tree/master) [![codecov](https://codecov.io/gh/devpendent/website/branch/master/graph/badge.svg)](https://codecov.io/gh/devpendent/website)
+# Devpendent Website 👨🏻‍💻 [![CircleCI](https://circleci.com/gh/devpendent/website/tree/master.svg?style=shield)](https://circleci.com/gh/devpendent/website/tree/master) [![codecov](https://codecov.io/gh/devpendent/website/branch/master/graph/badge.svg)](https://codecov.io/gh/devpendent/website) [![Netlify Status](https://api.netlify.com/api/v1/badges/db516646-820d-4deb-8b9b-521483fc40ad/deploy-status)](https://app.netlify.com/sites/devpendent/deploys)
 
 👨🏻‍💻 An Open Sourced Platform for Indonesian Election Real Count<br>
 💻 [Live site](https://devpendent.netlify.com/)
