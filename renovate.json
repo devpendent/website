@@ -1,6 +1,7 @@
 {
   "extends": [
     "config:base",
-    ":assignAndReview(zainfathoni,ri7nz)"
+    ":assignAndReview(zainfathoni,ri7nz)",
+    ":label(chore)"
   ]
 }
