@@ -4,13 +4,11 @@ import Layout from 'components/layout'
 import SEO from 'components/seo'
 import { Link } from 'gatsby'
 import React from 'react'
-// test gpg
+
 const IndexPage = () => (
   <Layout>
     <SEO keywords={[`gatsby`, `application`, `react`]} title='Home' />
     <h1>Hi people</h1>
-
-    <div>Test fontAwesome</div>
     <FontAwesomeIcon icon='fa-facebook-square' />
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
