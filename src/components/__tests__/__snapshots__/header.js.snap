@@ -14,7 +14,7 @@ exports[`Header renders correctly 1`] = `
         href="/"
         style="color: white; text-decoration: none;"
       >
-        Default Starter
+        Devpendent
       </a>
     </h1>
   </div>
