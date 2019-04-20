@@ -6,8 +6,10 @@
  */
 
 import Header from 'components/header'
+import 'font-awesome/css/font-awesome.min.css'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+
 import React from 'react'
 import './layout.css'
 
