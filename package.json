@@ -31,7 +31,6 @@
     "@snowcoders/sortier": "2.6.1",
     "babel-jest": "24.7.1",
     "babel-preset-gatsby": "0.1.11",
-    "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-react": "7.0.2",
     "eslint-plugin-import": "2.17.2",
@@ -43,7 +42,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "24.7.1",
     "lint-staged": "8.1.5",
-    "prettier-standard": "9.1.1",
+    "prettier-eslint-cli": "4.7.1",
     "react-testing-library": "6.1.2"
   },
   "husky": {
@@ -53,21 +52,19 @@
   },
   "lint-staged": {
     "linters": {
-      "src/**/*.js": [
-        "prettier-standard",
+      "src/**/*.{js,json}": [
+        "prettier-eslint --write",
         "npx sortier",
-        "eslint --ignore-path .gitignore --fix",
         "git add",
         "jest --findRelatedTests"
       ],
       "src/**/*.json": [
-        "prettier-standard",
+        "prettier-eslint --write",
         "npx sortier",
         "git add"
       ],
       "gatsby-*.js": [
-        "prettier-standard",
-        "eslint --ignore-path .gitignore --fix",
+        "prettier-eslint --write",
         "git add",
         "jest --findRelatedTests"
       ]
@@ -86,9 +83,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "format:prettier": "prettier-standard --write {src/**/*,gatsby-*}.{js,json}",
-    "format:lint": "eslint --ignore-path .gitignore --fix {src/**/*,gatsby-*}.js",
-    "format": "yarn format:prettier && yarn format:lint",
+    "format": "prettier-eslint --write \"{src/**/*,gatsby-*}.{js,json}\"",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "jest",
