@@ -5,6 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import Header from 'components/header'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
