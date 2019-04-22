@@ -1,4 +1,9 @@
-# Devpendent Website 👨🏻‍💻 [![CircleCI](https://circleci.com/gh/devpendent/website/tree/master.svg?style=shield)](https://circleci.com/gh/devpendent/website/tree/master) [![codecov](https://codecov.io/gh/devpendent/website/branch/master/graph/badge.svg)](https://codecov.io/gh/devpendent/website) [![Maintainability](https://api.codeclimate.com/v1/badges/4ae06bcd4e5e0b47b1f1/maintainability)](https://codeclimate.com/github/devpendent/website/maintainability) [![Netlify Status](https://api.netlify.com/api/v1/badges/db516646-820d-4deb-8b9b-521483fc40ad/deploy-status)](https://app.netlify.com/sites/devpendent/deploys)
+# Devpendent Website 👨🏻‍💻
+
+[![CircleCI](https://circleci.com/gh/devpendent/website/tree/master.svg?style=shield)](https://circleci.com/gh/devpendent/website/tree/master)
+[![codecov](https://codecov.io/gh/devpendent/website/branch/master/graph/badge.svg)](https://codecov.io/gh/devpendent/website)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4ae06bcd4e5e0b47b1f1/maintainability)](https://codeclimate.com/github/devpendent/website/maintainability)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/db516646-820d-4deb-8b9b-521483fc40ad/deploy-status)](https://app.netlify.com/sites/devpendent/deploys)
 
 👨🏻‍💻 An Open Sourced Platform for Indonesian Election Real Count<br>
 💻 [Live site](https://devpendent.netlify.com/)
@@ -9,9 +14,9 @@
 2. Clone this project and run `yarn` in the project's root directory.
 
 ```sh
-$ git clone git@github.com:devpendent/website.git
-$ cd website
-$ yarn
+git clone git@github.com:devpendent/website.git
+cd website
+yarn
 ```
 
 ## Available Scripts
