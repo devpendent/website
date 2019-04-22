@@ -8,11 +8,10 @@ describe('Simple Devpendant e2e Test', () => {
   })
 
   it('shows the Banner of devpendant apps', () => {
-    cy.contains(meta.siteMetadata.title).should('be.visible')
-    cy.get('h1').should('contain', meta.siteMetadata.title)
+    cy.getByText(meta.siteMetadata.title).should('be.visible')
   })
 
   it('shows the title of devpendant apps', () => {
-    cy.title().should('contain', meta.siteMetadata.title)
+    cy.title().should('eq', `Home | ${meta.siteMetadata.title}`)
   })
 })
