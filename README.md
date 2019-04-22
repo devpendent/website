@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/4ae06bcd4e5e0b47b1f1/maintainability)](https://codeclimate.com/github/devpendent/website/maintainability)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/db516646-820d-4deb-8b9b-521483fc40ad/deploy-status)](https://app.netlify.com/sites/devpendent/deploys)
 
-👨🏻‍💻 An Open Sourced Platform for Indonesian Election Real Count<br>
+👨🏻‍💻 An Open Sourced Platform for Indonesia Election Real Count<br>
 💻 [Live site](https://devpendent.netlify.com/)
 
 ## Installation

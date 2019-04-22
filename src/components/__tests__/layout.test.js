@@ -9,6 +9,8 @@ describe('Image', () => {
       render({
         site: {
           siteMetadata: {
+            desciption:
+              'An Open Sourced Platform for Indonesia Election Real Count',
             title: 'Devpendent'
           }
         }

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Devpendent`,
-    description: `👨🏻‍💻 Open Sourced Platform for Indonesian Election Real Count`,
+    description: `An Open Sourced Platform for Indonesia Election Real Count`,
     author: `@zainfathoni`
   },
   plugins: [

@@ -18,6 +18,9 @@ exports[`Image renders correctly 1`] = `
           Devpendent
         </a>
       </h1>
+      <h4
+        style="color: white;"
+      />
     </div>
   </header>
   <div

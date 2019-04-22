@@ -7,8 +7,15 @@ import React from 'react'
 const IndexPage = () => (
   <Layout>
     <SEO keywords={[`gatsby`, `application`, `react`]} title='Home' />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <h1>Platform Rekapitulasi Suara Pemilu</h1>
+    <h2>Apakah Devpendent itu?</h2>
+    <p>
+      Devpendent adalah sebuah platform untuk rekapitulasi suara perolehan dalam
+      Pemilihan Umum dan Pemilihan Kepala Daerah di Indonesia. Platform ini
+      dikembangkan dengan lisensi kode sumber terbuka{' '}
+      <span>(Open Source License)</span> sehingga dapat digunakan oleh siapapun
+      yang memiliki kepentingkan untuk melakukan rekapitulasi suara.
+    </p>
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
