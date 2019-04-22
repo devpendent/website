@@ -5,9 +5,18 @@ module.exports = {
     author: `@zainfathoni`
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-less`,
+      options: { javascriptEnabled: true }
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-antd`,
+      options: {
+        style: true
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
