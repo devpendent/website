@@ -1,4 +1,4 @@
-describe('Simple Devpendant e2e Test', () => {
+describe('Navigation', () => {
   it('navigates to page-2 properly', () => {
     cy.visit('/')
       .getByText(/page 2/i)

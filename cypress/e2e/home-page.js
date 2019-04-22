@@ -1,6 +1,6 @@
 import meta from '../../gatsby-config.js'
 
-describe('Simple Devpendant e2e Test', () => {
+describe('Home Page', () => {
   it('shows the default home page of devpendant apps', () => {
     cy.visit('/')
       .url()
