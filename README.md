@@ -37,7 +37,7 @@ Just an alias `yarn develop`, for you who are used to type `yarn start` instead.
 
 #### `yarn build`
 
-Builds the app for production to the `public` folder.<br>
+Builds the app for production to the `public` folder.
 
 #### `yarn serve`
 
@@ -47,8 +47,19 @@ Serves the built assets from the `yarn:build` command above.
 
 #### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
+
+#### `yarn test:coverage`
+
+Run test once and return coverage report afterwards.
+
+#### `yarn test:e2e`
+
+Run end-to-end tests using Cypress.
+
+#### `yarn validate`
+
+Validates that all tests are passed properly.
 
 ### Formatting
 
