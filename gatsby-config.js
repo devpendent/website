@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-antd',
+      resolve: `gatsby-plugin-antd`,
       options: {
         style: true
       }
