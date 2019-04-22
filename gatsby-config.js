@@ -9,7 +9,6 @@ module.exports = {
       resolve: `gatsby-plugin-less`,
       options: { javascriptEnabled: true }
     },
-    `gatsby-plugin-sass`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
