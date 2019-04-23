@@ -1,5 +1,6 @@
 {
   "extends": ["config:base", ":label(chore)"],
+  "automerge": true,
   "assignees": ["zainfathoni", "ri7nz"],
   "reviewers": ["zainfathoni", "ri7nz"]
 }
