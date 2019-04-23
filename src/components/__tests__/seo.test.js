@@ -5,7 +5,7 @@ import { render } from 'react-testing-library'
 import SEO from '../seo'
 
 describe('SEO', () => {
-  const description = `An Open Sourced Platform for Indonesian Election Real Count`
+  const description = `An Open Sourced Platform for Indonesia Election Real Count`
   beforeEach(() => {
     useStaticQuery.mockReturnValueOnce({
       site: {

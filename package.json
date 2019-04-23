@@ -1,7 +1,7 @@
 {
   "name": "@devpendent/website",
   "private": false,
-  "description": "An Open Sourced Platform for Indonesian Election Real Count",
+  "description": "An Open Sourced Platform for Indonesia Election Real Count",
   "version": "0.1.0",
   "author": "Zain Fathoni <zain.fathoni@gmail.com>",
   "dependencies": {
