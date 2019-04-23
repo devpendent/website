@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "config:base",
-    ":assignAndReview(zainfathoni)",
-    ":assignAndReview(ri7nz)",
-    ":label(chore)"
-  ]
+  "extends": ["config:base", ":label(chore)"],
+  "assignees": ["zainfathoni", "ri7nz"],
+  "reviewers": ["zainfathoni", "ri7nz"]
 }
