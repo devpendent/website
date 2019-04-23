@@ -1,9 +1,4 @@
-<!--
-Thanks for your interest in the project. Bugs filed and PRs submitted are appreciated!
-
-Please fill out the information below to expedite the review and (hopefully)
-merge of your pull request!
--->
+# Title
 
 <!-- What changes are being made? (What feature/bug is being fixed here?) -->
 
