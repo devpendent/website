@@ -6,6 +6,7 @@
   "author": "Zain Fathoni <zain.fathoni@gmail.com>",
   "dependencies": {
     "@emotion/core": "10.0.10",
+    "@emotion/styled": "10.0.10",
     "@fortawesome/fontawesome-svg-core": "1.2.17",
     "@fortawesome/free-solid-svg-icons": "5.8.1",
     "@fortawesome/react-fontawesome": "0.1.4",
@@ -47,9 +48,11 @@
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "1.1.1",
     "jest": "24.7.1",
+    "jest-emotion": "10.0.10",
     "lint-staged": "8.1.5",
     "npm-run-all": "4.1.5",
     "prettier-eslint-cli": "4.7.1",
+    "react-test-renderer": "16.8.6",
     "react-testing-library": "6.1.2",
     "start-server-and-test": "1.9.0"
   },
