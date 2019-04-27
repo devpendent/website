@@ -1,5 +1,3 @@
-# Title
-
 <!-- What changes are being made? (What feature/bug is being fixed here?) -->
 
 **What**:
