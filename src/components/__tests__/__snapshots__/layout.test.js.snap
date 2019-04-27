@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Image renders correctly 1`] = `
+exports[`Layout renders correctly 1`] = `
 <div>
   <header
     style="background: rebeccapurple; margin-bottom: 1.45rem;"

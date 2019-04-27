@@ -1,20 +1,19 @@
-import { StaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 import React from 'react'
 import { render } from 'react-testing-library'
 import Layout from '../layout'
 
-describe('Image', () => {
+describe('Layout', () => {
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(({ render }) =>
-      render({
-        site: {
-          siteMetadata: {
-            desciption:
-              'An Open Sourced Platform for Indonesia Election Real Count',
-            title: 'Devpendent'
-          }
+    useStaticQuery.mockReturnValueOnce({
+      site: {
+        siteMetadata: {
+          desciption:
+            'An Open Sourced Platform for Indonesia Election Real Count',
+          title: 'Devpendent'
         }
-      }))
+      }
+    })
   })
 
   it('renders correctly', () => {
