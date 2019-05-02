@@ -38,7 +38,7 @@ jobs:
       - run:
           name: 'Setup custom environment variables'
           command: |
-            echo 'export CYPRESS_DASHBOARD_KEY=$CYPRESS_DASHBOARD_KEY' >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
+            echo 'export CYPRESS_DASHBOARD_KEY=$CYPRESS_DASHBOARD_KEY' >> $BASH_ENV # Redirect $CYPRESS_DASHBOARD_KEY into $BASH_ENV
 
       # run tests!
       - run: yarn validate
