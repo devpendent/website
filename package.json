@@ -97,7 +97,7 @@
     "serve:e2e": "gatsby serve -p 8000",
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record --key $CYPRESS_DASHBOARD_KEY",
     "cy:open": "cypress open",
     "pretest:e2e:run": "yarn build",
     "test:e2e:run": "start-server-and-test serve:e2e http://localhost:8000 cy:run",
