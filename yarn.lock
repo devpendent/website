@@ -745,7 +745,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3":
+"@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
   integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
@@ -3890,13 +3890,13 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-cypress-testing-library@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.4.0.tgz#30e3351dde4d7aebb8ba524141203a2d44f70d3c"
-  integrity sha512-RHTuMZIjTShjTD3UB0vbnRhM5SNwh0yzbH1X/BwH9JtnrsswH+dtroIm2G0NHPTYBS6pkpbTlgM6XDt/caGXiA==
+cypress-testing-library@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-3.0.1.tgz#cd5f4ce4423cbb20cafdb869b435b35d01d11b66"
+  integrity sha512-vpGRbcYS229KP/FOASKQuT717GxpO9mG7rnFz2dOe7sz7JPnIHIP5M3KoPvoLfAN1TictFFv05jndyJi2OLa3A==
   dependencies:
     "@babel/runtime" "^7.4.3"
-    dom-testing-library "^3.12.4"
+    dom-testing-library "^4.0.0"
 
 cypress@3.2.0:
   version "3.2.0"
@@ -4362,15 +4362,15 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "^1.3.0"
     entities "^1.1.1"
 
-dom-testing-library@^3.12.4, dom-testing-library@^3.19.0:
-  version "3.19.3"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.19.3.tgz#fba399987be1bdd57b07c4bc3ef46c3c084b26d9"
-  integrity sha512-oiI+oq91iO/Vpp+pt8PqfqLfBK074FH0eprhoFNvBCvJOk7vL4ozbe/yj/kEEGR6kiT4F3MAam19AX1fdGFjrA==
+dom-testing-library@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-4.0.0.tgz#14471ff484cda6041c016c0a2a42d53bf1f4ad03"
+  integrity sha512-ycBnCZrhijGQMIg6HnMKy+K3KqWtieYVMoHVaK1kcei5WmoO2Cj3imUtQRs/N0ZvZVETuVqo1UqEAJ6v14zd+w==
   dependencies:
-    "@babel/runtime" "^7.3.4"
+    "@babel/runtime" "^7.4.3"
     "@sheerun/mutationobserver-shim" "^0.3.2"
-    pretty-format "^24.5.0"
-    wait-for-expect "^1.1.0"
+    pretty-format "^24.7.0"
+    wait-for-expect "^1.1.1"
 
 dom-walk@^0.1.0:
   version "0.1.1"
@@ -5888,14 +5888,15 @@ g-status@^2.0.2:
     matcher "^1.0.0"
     simple-git "^1.85.0"
 
-gatsby-cli@^2.5.11:
-  version "2.5.11"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.5.11.tgz#8a00104cce88128d3f5a28967445230a6d49fc34"
-  integrity sha512-jwTXsjBzZZMYIOsLJa/gSnt+qECrVpOJOrIOLqbhfpAIUOrlKgowwf4ks7GfBnEtdlZ/dtt0bN6HifbWdf1xag==
+gatsby-cli@^2.5.12:
+  version "2.5.12"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.5.12.tgz#c1c92af0dd12ffbad76da05c136d926d3c66854d"
+  integrity sha512-MhcHfYoiBcccX17KnaivaDZQb7j9ZhrAb90PO0ULrln7BsV93pmzz/t9iT1+0Sill0ST6vf/GbtD2kaiOWbNSg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
+    chalk "^2.4.2"
     ci-info "^2.0.0"
     clipboardy "^1.2.3"
     common-tags "^1.4.0"
@@ -5923,19 +5924,19 @@ gatsby-cli@^2.5.11:
     yargs "^12.0.5"
     yurnalist "^1.0.2"
 
-gatsby-image@2.0.40:
-  version "2.0.40"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.40.tgz#eb59aca8891804464e339baa7421d78f4b7a66c4"
-  integrity sha512-iH2+F/J0DiDXeiC2n/grI1QrcXNJDVxnxxCedHeE0/0iUFwlQ52TYyRPbCSnIZg0xcOmr1FB7EaRCoqi7rddVg==
+gatsby-image@2.0.41:
+  version "2.0.41"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.41.tgz#d2f41b13013c7294123c341799d3645bb1a6dbe7"
+  integrity sha512-FeR9DkTZAfHJf7jF4nduDPMEOElpjouzKi7aHblmKyBPBTxT3wt57AQIdwjdg5RoUznjVlDfRnmemJPPGWCNLA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     object-fit-images "^3.2.4"
     prop-types "^15.6.1"
 
-gatsby-link@^2.0.16:
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.16.tgz#5d140e43f3aec6dd59e01c1468d77a54092370c5"
-  integrity sha512-2CWQeRtkidpi6uEMoq9KRkssqh66ybSWTeQ7W2as7uqldaFlZDOJxkpqf3C3n207iQxxcsY6vzvMgjtGzucv/Q==
+gatsby-link@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.1.0.tgz#19b9d0d3c06f42b707d0cf097c3a76b72d189530"
+  integrity sha512-HNXxZoS4TB4FDRiBHwZEIS374jwvw0cNnLTqgW6gTI6mPQcqGwn//qQHmpSwT/jDDJWaVcvVNDZksnkKm0kgJA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@types/reach__router" "^1.0.0"
@@ -5965,18 +5966,18 @@ gatsby-plugin-less@2.0.12:
     "@babel/runtime" "^7.0.0"
     less-loader "^4.1.0"
 
-gatsby-plugin-manifest@2.0.29:
-  version "2.0.29"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.29.tgz#ce83b0ef1aa2d74b9027c3bdb26be2fbd25ef1bc"
-  integrity sha512-zxUuoKxjjdEyj8Xh/svTIOhaIjONB2txel441yJXoYfHmNndysEn+DcYUMkN4xQwZLIaVKoQZ/fCNcVhUOUGIg==
+gatsby-plugin-manifest@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.1.0.tgz#734dec98710eb79e77c9b7a8332a85db8a5030f0"
+  integrity sha512-oY51ZTQOBzB3JdmINqfusZeYVY4HoQlEUtqVr+HhGXk05iILN19NBfIFCQIogAkK+iYRJyW3D3yHyGc2gOSgcA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     sharp "^0.21.3"
 
-gatsby-plugin-offline@2.0.25:
-  version "2.0.25"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.25.tgz#44839cd3ddb90c7478445c3a3c38fc8467b510a2"
-  integrity sha512-+4g4UTGVZmqy7ZBT2k7QZbTO6hCrujzJ+d0WYGz8OSMLIwckHXacnVKzCWTorrZMJHURxcEIopqz+S3OIdtCFg==
+gatsby-plugin-offline@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.1.0.tgz#1c2da8881fa3b11b8de3da52f88f76e2c2fda811"
+  integrity sha512-qFBERk/tgjslfZ2RrTBb80bQDls4V2iJMB3a3wyHTbYF17laE2ept7GkeiH/W9uuab24pH1+gFIF514Fn5uBTA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     cheerio "^1.0.0-rc.2"
@@ -6036,10 +6037,10 @@ gatsby-react-router-scroll@^2.0.7:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-source-filesystem@2.0.32:
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.32.tgz#c39e8bd25e11da5e47fa921c2f050018854fe23a"
-  integrity sha512-OdgyIu7myI2lrKf13zN3HQ0GBcR4nm7B+XkAytfW394BLiSYLt7htRtSBIxm19eLtfY4yVFLFE3R48FuP/J+/w==
+gatsby-source-filesystem@2.0.33:
+  version "2.0.33"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.33.tgz#c8b4ed9a231a325ca356f739bab77ea8fad5824d"
+  integrity sha512-GH/Y8dJ/+EKie3ckMrcHn1MsYcLVNbglCKNoTaDuY31rFCh3gq6310bdi8u//J+dcgcz7ggHXTN0W7FXxWF9FQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -6090,10 +6091,10 @@ gatsby-transformer-sharp@2.1.18:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@2.3.29:
-  version "2.3.29"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.29.tgz#65162804ecc1bf33ae1ff3b2d5a66deec5798e63"
-  integrity sha512-Eb3YdZcuCDOgPg8A4VCCbxPMH2n8hDmylgUrqNL7MqDfs2w52J4mFpxU8OrX44BtGmZggBr8hEsURfq6ErTa6g==
+gatsby@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.4.0.tgz#8315c73957928af15bb3c15e93aebd19d7204853"
+  integrity sha512-kWYpEb+V/7KJC7yrznneYWv1nQdcaTdAOEtNAnk99pgC6vnDETgk2AVVh83AhJXmx5nFKcojINwj4hofF5Vj/g==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6150,8 +6151,8 @@ gatsby@2.3.29:
     flat "^4.0.0"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.5.11"
-    gatsby-link "^2.0.16"
+    gatsby-cli "^2.5.12"
+    gatsby-link "^2.1.0"
     gatsby-plugin-page-creator "^2.0.12"
     gatsby-react-router-scroll "^2.0.7"
     gatsby-telemetry "^1.0.9"
@@ -6923,10 +6924,10 @@ humps@^2.0.1:
   resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
   integrity sha1-3QLqYIG9BWjcXQcxhEY5V7qe+ao=
 
-husky@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-2.0.0.tgz#fdc232f6e44af8257d86602c34105673ce532c79"
-  integrity sha512-YvSQ5UQHNfqm+g+P1sFTkPI23nEe0gbKXdv5ZTRStYSVdAYyH1iypFilAMVqXLXnjGtb6lBuR/2Sf5FkwCNY2Q==
+husky@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-2.2.0.tgz#4dda4370ba0f145b6594be4a4e4e4d4c82a6f2d5"
+  integrity sha512-lG33E7zq6v//H/DQIojPEi1ZL9ebPFt3MxUMD8MR0lrS2ljEPiuUUxlziKIs/o9EafF0chL7bAtLQkcPvXmdnA==
   dependencies:
     cosmiconfig "^5.2.0"
     execa "^1.0.0"
@@ -11033,7 +11034,7 @@ pretty-format@^23.0.1:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-pretty-format@^24.5.0, pretty-format@^24.7.0:
+pretty-format@^24.7.0:
   version "24.7.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.7.0.tgz#d23106bc2edcd776079c2daa5da02bcb12ed0c10"
   integrity sha512-apen5cjf/U4dj7tHetpC7UEFCvtAgnNZnBDkfPv3fokzIqyOJckAG9OlAPC1BlFALnqT/lGB2tl9EJjlK6eCsA==
@@ -11834,13 +11835,13 @@ react-slick@~0.23.2:
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
-react-testing-library@6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.1.2.tgz#f6bba6eeecedac736eb00b22b4c70bae04535a4f"
-  integrity sha512-z69lhRDGe7u/NOjDCeFRoe1cB5ckJ4656n0tj/Fdcr6OoBUu7q9DBw0ftR7v5i3GRpdSWelnvl+feZFOyXyxwg==
+react-testing-library@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-7.0.0.tgz#d3b535e44de94d7b0a83c56cd2e3cfed752dcec1"
+  integrity sha512-8SHqwG+uhN9VhAgNVkVa3f7VjTw/L5CIaoAxKmy+EZuDQ6O+VsfcpRAyUw3MDL1h8S/gGrEiazmHBVL/uXsftA==
   dependencies:
-    "@babel/runtime" "^7.4.2"
-    dom-testing-library "^3.19.0"
+    "@babel/runtime" "^7.4.3"
+    dom-testing-library "^4.0.0"
 
 react@16.8.6:
   version "16.8.6"
@@ -14167,7 +14168,7 @@ w3c-hr-time@^1.0.1:
   dependencies:
     browser-process-hrtime "^0.1.2"
 
-wait-for-expect@^1.1.0:
+wait-for-expect@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-1.1.1.tgz#9cd10e07d52810af9e0aaf509872e38f3c3d81ae"
   integrity sha512-vd9JOqqEcBbCDhARWhW85ecjaEcfBLuXgVBqatfS3iw6oU4kzAcs+sCNjF+TC9YHPImCW7ypsuQc+htscIAQCw==
