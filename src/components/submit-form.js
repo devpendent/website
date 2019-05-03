@@ -2,11 +2,18 @@ import { Button, Form, Input } from 'antd'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const _SubmitForm = ({ form: { getFieldDecorator, validateFields } }) => {
+const _SubmitForm = ({
+  form: { getFieldDecorator, validateFields },
+  onSubmit
+}) => {
   const handleSubmit = e => {
     e.preventDefault()
-    validateFields((err, values) => {
+    validateFields((err, { candidateA, candidateB }) => {
       if (!err) {
+        onSubmit({
+          candidateA: Number(candidateA),
+          candidateB: Number(candidateB)
+        })
       }
     })
   }
@@ -47,7 +54,8 @@ _SubmitForm.propTypes = {
   form: PropTypes.shape({
     getFieldDecorator: PropTypes.func.isRequired,
     validateFields: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  onSubmit: PropTypes.func.isRequired
 }
 
 const SubmitForm = Form.create()(_SubmitForm)

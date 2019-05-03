@@ -3,8 +3,14 @@ import React from 'react'
 import { fireEvent, render, waitForElement } from 'react-testing-library'
 
 describe('SubmitForm', () => {
+  const onSubmit = jest.fn()
+
+  beforeEach(() => {
+    onSubmit.mockClear()
+  })
+
   it('renders Calon A field as a number', () => {
-    const { getByLabelText } = render(<SubmitForm />)
+    const { getByLabelText } = render(<SubmitForm onSubmit={onSubmit} />)
 
     const calonA = getByLabelText('Calon A')
     fireEvent.change(calonA, { target: { value: 'abc' } })
@@ -14,7 +20,7 @@ describe('SubmitForm', () => {
   })
 
   it('renders Calon B field as a number', () => {
-    const { getByLabelText } = render(<SubmitForm />)
+    const { getByLabelText } = render(<SubmitForm onSubmit={onSubmit} />)
 
     const calonA = getByLabelText('Calon B')
     fireEvent.change(calonA, { target: { value: 'abc' } })
@@ -24,7 +30,7 @@ describe('SubmitForm', () => {
   })
 
   it('validates field requirements correctly', async () => {
-    const { getByText } = render(<SubmitForm />)
+    const { getByText } = render(<SubmitForm onSubmit={onSubmit} />)
     const warn = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
     const submit = getByText('Kirim')
@@ -42,6 +48,33 @@ describe('SubmitForm', () => {
     expect(warn).toHaveBeenNthCalledWith(2, 'async-validator:', [
       'candidateB is required'
     ])
+
+    warn.mockRestore()
+  })
+
+  it('submit forms correctly', () => {
+    const { getByLabelText, getByText, queryByText } = render(
+      <SubmitForm onSubmit={onSubmit} />
+    )
+    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {})
+
+    fireEvent.change(getByLabelText('Calon A'), { target: { value: '123' } })
+    fireEvent.change(getByLabelText('Calon B'), { target: { value: '456' } })
+    fireEvent.submit(getByText('Kirim'))
+
+    expect(
+      queryByText('Masukkan total perolehan suara Calon A')
+    ).not.toBeInTheDocument()
+    expect(
+      queryByText('Masukkan total perolehan suara Calon B')
+    ).not.toBeInTheDocument()
+
+    expect(warn).toHaveBeenCalledTimes(0)
+    expect(onSubmit).toHaveBeenCalledTimes(1)
+    expect(onSubmit).toHaveBeenNthCalledWith(1, {
+      candidateA: 123,
+      candidateB: 456
+    })
 
     warn.mockRestore()
   })
