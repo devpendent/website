@@ -5,11 +5,9 @@ exports[`renders with correct styles 1`] = `
   float: left;
 }
 
-<div>
-  <h1
-    class="emotion-0"
-  >
-    hello world
-  </h1>
-</div>
+<h1
+  class="emotion-0"
+>
+  hello world
+</h1>
 `;

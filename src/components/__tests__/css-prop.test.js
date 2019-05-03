@@ -10,5 +10,5 @@ test('renders with correct styles', () => {
     float: left;
   `
   const { container } = render(<H1>hello world</H1>)
-  expect(container).toMatchSnapshot()
+  expect(container.firstChild).toMatchSnapshot()
 })
