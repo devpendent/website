@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "module": "commonjs",
+    "paths": {
+      "*": ["src/*"]
+    },
+    "target": "es2017"
+  },
+  "exclude": [
+    "__mocks__",
+    ".cache",
+    ".idea",
+    ".storybook",
+    "coverage",
+    "internals",
+    "node_modules",
+    "public",
+    "static",
+    "storybook-static"
+  ]
+}
