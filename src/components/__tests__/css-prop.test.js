@@ -9,6 +9,6 @@ test('renders with correct styles', () => {
   const H1 = styled.h1`
     float: left;
   `
-  const tree = render(<H1>hello world</H1>)
-  expect(tree).toMatchSnapshot()
+  const { container } = render(<H1>hello world</H1>)
+  expect(container).toMatchSnapshot()
 })
