@@ -11,20 +11,10 @@ describe('SubmitForm', () => {
     warn.mockClear()
   })
 
-  it('renders Calon A field as a number', () => {
+  it.each([['Calon A'], ['Calon B']])('renders %s field as a number', label => {
     const { getByLabelText } = render(<SubmitForm onSubmit={onSubmit} />)
 
-    const calonA = getByLabelText('Calon A')
-    fireEvent.change(calonA, { target: { value: 'abc' } })
-    expect(calonA).toHaveProperty('value', '')
-    fireEvent.change(calonA, { target: { value: '123' } })
-    expect(calonA).toHaveProperty('value', '123')
-  })
-
-  it('renders Calon B field as a number', () => {
-    const { getByLabelText } = render(<SubmitForm onSubmit={onSubmit} />)
-
-    const calonA = getByLabelText('Calon B')
+    const calonA = getByLabelText(label)
     fireEvent.change(calonA, { target: { value: 'abc' } })
     expect(calonA).toHaveProperty('value', '')
     fireEvent.change(calonA, { target: { value: '123' } })
