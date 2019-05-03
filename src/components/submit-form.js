@@ -12,6 +12,13 @@ const _SubmitForm = ({ form: { getFieldDecorator } }) => (
         ]
       })(<Input placeholder='Total suara Calon A' type='number' />)}
     </Form.Item>
+    <Form.Item label='Calon B'>
+      {getFieldDecorator('candidateB', {
+        rules: [
+          { message: 'Masukkan total perolehan suara Calon B', required: true }
+        ]
+      })(<Input placeholder='Total suara Calon B' type='number' />)}
+    </Form.Item>
   </Form>
 )
 

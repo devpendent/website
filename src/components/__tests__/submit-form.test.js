@@ -12,4 +12,14 @@ describe('SubmitForm', () => {
     fireEvent.change(calonA, { target: { value: '123' } })
     expect(calonA).toHaveProperty('value', '123')
   })
+
+  it('renders Calon B field as a number', () => {
+    const { getByLabelText } = render(<SubmitForm />)
+
+    const calonA = getByLabelText('Calon B')
+    fireEvent.change(calonA, { target: { value: 'abc' } })
+    expect(calonA).toHaveProperty('value', '')
+    fireEvent.change(calonA, { target: { value: '123' } })
+    expect(calonA).toHaveProperty('value', '123')
+  })
 })
