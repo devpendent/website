@@ -1,10 +1,7 @@
 import { useStaticQuery } from 'gatsby'
-import serializer from 'jest-emotion'
 import React from 'react'
 import { render } from 'react-testing-library'
 import Layout from '../layout'
-
-expect.addSnapshotSerializer(serializer)
 
 describe('Layout', () => {
   beforeEach(() => {
