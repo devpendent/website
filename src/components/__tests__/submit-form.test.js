@@ -4,9 +4,11 @@ import { fireEvent, render, waitForElement } from 'react-testing-library'
 
 describe('SubmitForm', () => {
   const onSubmit = jest.fn()
+  const warn = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
   beforeEach(() => {
     onSubmit.mockClear()
+    warn.mockClear()
   })
 
   it('renders Calon A field as a number', () => {
@@ -31,7 +33,6 @@ describe('SubmitForm', () => {
 
   it('validates field requirements correctly', async () => {
     const { getByText } = render(<SubmitForm onSubmit={onSubmit} />)
-    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
     const submit = getByText('Kirim')
     fireEvent.submit(submit)
@@ -48,15 +49,12 @@ describe('SubmitForm', () => {
     expect(warn).toHaveBeenNthCalledWith(2, 'async-validator:', [
       'candidateB is required'
     ])
-
-    warn.mockRestore()
   })
 
   it('submit forms correctly', () => {
     const { getByLabelText, getByText, queryByText } = render(
       <SubmitForm onSubmit={onSubmit} />
     )
-    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
     fireEvent.change(getByLabelText('Calon A'), { target: { value: '123' } })
     fireEvent.change(getByLabelText('Calon B'), { target: { value: '456' } })
@@ -75,7 +73,5 @@ describe('SubmitForm', () => {
       candidateA: 123,
       candidateB: 456
     })
-
-    warn.mockRestore()
   })
 })
