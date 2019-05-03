@@ -19,7 +19,9 @@ exports[`Layout renders correctly 1`] = `
     </h1>
     <h4
       style="color: white;"
-    />
+    >
+      An Open Sourced Platform for Indonesia Election Real Count
+    </h4>
   </div>
 </header>
 `;
