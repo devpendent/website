@@ -97,12 +97,15 @@
     "serve:e2e": "gatsby serve -p 8000",
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
-    "cy:run": "cypress run",
     "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:ci": "cypress run --record --key $CYPRESS_DASHBOARD_KEY",
+    "test:e2e:dev": "start-server-and-test start http://localhost:8000 cy:open",
     "pretest:e2e:run": "yarn build",
     "test:e2e:run": "start-server-and-test serve:e2e http://localhost:8000 cy:run",
-    "test:e2e:dev": "start-server-and-test start http://localhost:8000 cy:open",
-    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
+    "pretest:e2e:run:ci": "yarn build",
+    "test:e2e:run:ci": "start-server-and-test serve:e2e http://localhost:8000 cy:run:ci",
+    "test:e2e": "is-ci \"test:e2e:run:ci\" \"test:e2e:dev\"",
     "validate": "cross-env CI=true npm-run-all --parallel test:coverage test:e2e"
   },
   "repository": {
