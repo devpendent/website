@@ -1,11 +1,38 @@
 import { Button, Form, Input } from 'antd'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { createContext, useContext } from 'react'
+
+const FormContext = createContext({})
+
+const NumberField = ({ id, label, message, placeholder }) => {
+  const { getFieldDecorator } = useContext(FormContext)
+  return (
+    <Form.Item label={label}>
+      {getFieldDecorator(id, {
+        rules: [
+          {
+            message,
+            required: true
+          }
+        ]
+      })(<Input placeholder={placeholder} type='number' />)}
+    </Form.Item>
+  )
+}
+
+NumberField.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired
+}
 
 const _SubmitForm = ({
   form: { getFieldDecorator, validateFields },
   onSubmit
 }) => {
+  const contextValue = { getFieldDecorator }
+
   const handleSubmit = e => {
     e.preventDefault()
     validateFields((err, { candidateA, candidateB }) => {
@@ -20,32 +47,26 @@ const _SubmitForm = ({
 
   return (
     <Form colon={false} layout='vertical' onSubmit={handleSubmit}>
-      <Form.Item label='Upload' />
-      <Form.Item label='Calon A'>
-        {getFieldDecorator('candidateA', {
-          rules: [
-            {
-              message: 'Masukkan total perolehan suara Calon A',
-              required: true
-            }
-          ]
-        })(<Input placeholder='Total suara Calon A' type='number' />)}
-      </Form.Item>
-      <Form.Item label='Calon B'>
-        {getFieldDecorator('candidateB', {
-          rules: [
-            {
-              message: 'Masukkan total perolehan suara Calon B',
-              required: true
-            }
-          ]
-        })(<Input placeholder='Total suara Calon B' type='number' />)}
-      </Form.Item>
-      <Form.Item>
-        <Button htmlType='submit' type='primary'>
-          Kirim
-        </Button>
-      </Form.Item>
+      <FormContext.Provider value={contextValue}>
+        <Form.Item label='Upload' />
+        <NumberField
+          id='candidateA'
+          label='Calon A'
+          message='Masukkan total perolehan suara Calon A'
+          placeholder='Total suara Calon A'
+        />
+        <NumberField
+          id='candidateB'
+          label='Calon B'
+          message='Masukkan total perolehan suara Calon B'
+          placeholder='Total suara Calon B'
+        />
+        <Form.Item>
+          <Button htmlType='submit' type='primary'>
+            Kirim
+          </Button>
+        </Form.Item>
+      </FormContext.Provider>
     </Form>
   )
 }
