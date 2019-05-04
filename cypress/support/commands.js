@@ -27,5 +27,5 @@
 Cypress.Commands.add('getExplainByLabelText', labelText =>
   cy
     .getByLabelText(labelText)
-    .parent()
+    .parentsUntil('.ant-form-item-control')
     .next())
