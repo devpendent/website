@@ -18,8 +18,8 @@ jobs:
           name: Run unit tests
           command: yarn test:coverage
       - run:
-          name: Upload Unit Tests reports to Codecov
-          command: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+          name: Upload unit tests reports to Codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2
