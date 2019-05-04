@@ -4,13 +4,6 @@
 #
 version: 2.1
 
-executors:
-  node-10:
-    description: CircleCI Docker image containing NodeJS 10.15.3 with browsers
-    docker:
-      - image: circleci/node:10.15.3-browsers
-    working_directory: ~/repo
-
 orbs:
   cypress: cypress-io/cypress@1.7.0
 
