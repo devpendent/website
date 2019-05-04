@@ -11,35 +11,47 @@ executors:
       - image: circleci/node:10.15.3-browsers
     working_directory: ~/repo
 
+orbs:
+  cypress: cypress-io/cypress@1.7.0
+
 jobs:
-  build:
-    executor: node-10
-
+  test:
+    executor: cypress/base-10
     steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v2-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v2-dependencies-{{ .Branch }}
-            - v2-dependencies
-
+      - run: echo "Assuming dependencies were installed using cypress/install job"
+      - attach_workspace:
+          at: ~/
       - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile # https://yarnpkg.com/lang/en/docs/cli/install/#toc-yarn-install-frozen-lockfile
-
-      - save_cache:
-          paths:
-            - node_modules
-            - ~/.cache/Cypress
-          key: v2-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
-
-      - run:
-          name: Run Unit and E2E tests in parallel
-          command: yarn validate
-
+          name: Run unit tests
+          command: yarn test:coverage
       - run:
           name: Upload Unit Tests reports to Codecov
           command: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      # first get the source code and install npm dependencies
+      - cypress/install:
+          yarn: true # use yarn
+          build: 'yarn build' # run a custom app build step
+      - test:
+          # make sure app has been installed and built
+          # before running tests across multiple machines
+          # this avoids installing same dependencies 10 times
+          requires:
+            - cypress/install
+      - cypress/run:
+          # make sure app has been installed and built
+          # before running tests across multiple machines
+          # this avoids installing same dependencies 10 times
+          requires:
+            - cypress/install
+          yarn: true # use yarn
+          record: true # record results on Cypress Dashboard
+          parallel: true # split all specs across machines
+          parallelism: 3 # use 3 CircleCI machines to finish quickly
+          group: 'e2e tests' # name this group "all tests" on the dashboard
+          start: 'yarn serve:e2e' # start server before running tests
+          wait-on: 'http://localhost:8000' # wait for server to respond
