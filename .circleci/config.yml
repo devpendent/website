@@ -22,26 +22,30 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
-            # - v1-dependencies-
+            - v2-dependencies-{{ .Branch }}
+            - v2-dependencies
 
-      - run: yarn
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile # https://yarnpkg.com/lang/en/docs/cli/install/#toc-yarn-install-frozen-lockfile
 
       - save_cache:
           paths:
             - node_modules
             - ~/.cache/Cypress
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v2-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
 
-      # Setup an environment variable.
       - run:
-          name: 'Setup custom environment variables'
+          name: Setup custom environment variables
           command: |
             echo 'export CYPRESS_DASHBOARD_KEY=$CYPRESS_DASHBOARD_KEY' >> $BASH_ENV # Redirect $CYPRESS_DASHBOARD_KEY into $BASH_ENV
 
-      # run tests!
-      - run: yarn validate
+      - run:
+          name: Run Unit and E2E tests in parallel
+          command: yarn validate
 
-      # Upload reports to Codecov
-      - run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+      - run:
+          name: Upload Unit Tests reports to Codecov
+          command: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN

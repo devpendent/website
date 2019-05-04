@@ -23,3 +23,15 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getExplainByLabelText', labelText =>
+  cy
+    .getByLabelText(labelText)
+    .parentsUntil('.ant-form-item-control')
+    .next())
+
+Cypress.Commands.add('getExplainByTestId', testId =>
+  cy
+    .getByTestId(testId)
+    .parentsUntil('.ant-form-item-control')
+    .next())
