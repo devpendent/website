@@ -14,7 +14,9 @@ describe('Navigation', () => {
   })
 
   it('navigates back to home properly', () => {
-    cy.getByText(/welcome to page 2/i).should('be.visible')
+    cy.visit('/page-2')
+      .getByText(/welcome to page 2/i)
+      .should('be.visible')
 
     cy.getByText(/homepage/i)
       .click()

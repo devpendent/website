@@ -7,10 +7,12 @@
 import meta from '../../gatsby-config.js'
 
 describe('Home Page', () => {
-  it('shows the default home page of devpendant apps', () => {
+  beforeEach(() => {
     cy.visit('/')
-      .url()
-      .should('eq', `${Cypress.config().baseUrl}`)
+  })
+
+  it('shows the default home page of devpendant apps', () => {
+    cy.url().should('eq', `${Cypress.config().baseUrl}`)
   })
 
   it('shows the Banner of devpendant apps', () => {
