@@ -28,7 +28,7 @@ workflows:
       # first get the source code and install npm dependencies
       - cypress/install:
           yarn: true # use yarn
-          build: 'yarn build' # run a custom app build step
+          build: yarn build # run a custom app build step
       - test:
           # make sure app has been installed and built
           # before running tests across multiple machines
@@ -45,6 +45,6 @@ workflows:
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
-          group: 'e2e tests' # name this group "all tests" on the dashboard
-          start: 'yarn serve:e2e' # start server before running tests
-          wait-on: 'http://localhost:8000' # wait for server to respond
+          group: e2e tests # name this group "all tests" on the dashboard
+          start: yarn serve:e2e # start server before running tests
+          wait-on: http://localhost:8000 # wait for server to respond
