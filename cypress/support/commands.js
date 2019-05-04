@@ -29,3 +29,9 @@ Cypress.Commands.add('getExplainByLabelText', labelText =>
     .getByLabelText(labelText)
     .parentsUntil('.ant-form-item-control')
     .next())
+
+Cypress.Commands.add('getExplainByTestId', testId =>
+  cy
+    .getByTestId(testId)
+    .parentsUntil('.ant-form-item-control')
+    .next())
