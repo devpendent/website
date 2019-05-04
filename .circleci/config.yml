@@ -37,11 +37,6 @@ jobs:
           key: v2-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
 
       - run:
-          name: Setup custom environment variables
-          command: |
-            echo 'export CYPRESS_DASHBOARD_KEY=$CYPRESS_DASHBOARD_KEY' >> $BASH_ENV # Redirect $CYPRESS_DASHBOARD_KEY into $BASH_ENV
-
-      - run:
           name: Run Unit and E2E tests in parallel
           command: yarn validate
 
