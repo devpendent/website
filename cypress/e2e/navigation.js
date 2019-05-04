@@ -1,3 +1,9 @@
+// type definitions for Cypress object "cy"
+/// <reference types="cypress" />
+
+// type definitions for cypress-testing-library extension
+/// <reference types="../cypress-testing-library/typings" />
+
 describe('Navigation', () => {
   it('navigates to page-2 properly', () => {
     cy.visit('/')
