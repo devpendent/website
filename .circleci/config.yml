@@ -2,19 +2,18 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
+
+executors:
+  node-10:
+    description: CircleCI Docker image containing NodeJS 10.15.3 with browsers
+    docker:
+      - image: circleci/node:10.15.3-browsers
+    working_directory: ~/repo
+
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10.15.3-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
+    executor: node-10
 
     steps:
       - checkout
