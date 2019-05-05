@@ -104,14 +104,16 @@
     "test:coverage": "jest --coverage",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:ci": "cypress run --record --key $CYPRESS_DASHBOARD_KEY",
+    "cy:run:ci": "cypress run --record --key $CYPRESS_RECORD_KEY",
     "test:e2e:dev": "start-server-and-test start http://localhost:8000 cy:open",
     "pretest:e2e:run": "yarn build",
     "test:e2e:run": "start-server-and-test serve:e2e http://localhost:8000 cy:run",
     "pretest:e2e:run:ci": "yarn build",
     "test:e2e:run:ci": "start-server-and-test serve:e2e http://localhost:8000 cy:run:ci",
     "test:e2e": "is-ci \"test:e2e:run:ci\" \"test:e2e:dev\"",
-    "validate": "cross-env CI=true npm-run-all --parallel test:coverage test:e2e"
+    "validate": "cross-env CI=true npm-run-all --parallel test:coverage test:e2e",
+    "ci:validate": "circleci config validate .circleci/config.yml",
+    "ci:process": "circleci config process .circleci/config.yml"
   },
   "repository": {
     "type": "git",

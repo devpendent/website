@@ -8,6 +8,30 @@
 👨🏻‍💻 An Open Sourced Platform for Indonesia Election Real Count<br>
 💻 [Live site](https://devpendent.netlify.com/)
 
+## Table of Contents
+
+- [Devpendent Website 👨🏻‍💻](#devpendent-website-%F0%9F%91%A8%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Available Scripts](#available-scripts)
+    - [Development](#development)
+      - [`yarn develop`](#yarn-develop)
+      - [`yarn start`](#yarn-start)
+    - [Building](#building)
+      - [`yarn build`](#yarn-build)
+      - [`yarn serve`](#yarn-serve)
+    - [Testing](#testing)
+      - [`yarn test`](#yarn-test)
+      - [`yarn test:coverage`](#yarn-testcoverage)
+      - [`yarn test:e2e`](#yarn-teste2e)
+      - [`yarn validate`](#yarn-validate)
+    - [Formatting](#formatting)
+      - [`yarn format`](#yarn-format)
+    - [Continuous Integration](#continuous-integration)
+      - [`yarn ci:validate`](#yarn-civalidate)
+      - [`yarn ci:process`](#yarn-ciprocess)
+  - [License](#license)
+
 ## Installation
 
 1. Make sure [yarn](https://yarnpkg.com) is installed in your local machine.
@@ -75,6 +99,21 @@ By default it has to be run automatically on save in your IDE (for Visual Studio
 
 It also will be run each time before you commit (pre-commit hook).
 This way, we can prevent unformatted file to be committed to the repository.
+
+### Continuous Integration
+
+Before running commands below, you have to install & setup CircleCI CLI in your local machine by following these two steps:
+
+1. [Install](https://circleci.com/docs/2.0/local-cli/#installation)
+2. [Configure](https://circleci.com/docs/2.0/local-cli/#configuring-the-cli)
+
+#### `yarn ci:validate`
+
+[Validate](https://circleci.com/docs/2.0/local-cli/#validate-a-circleci-config) the current CircleCI config
+
+#### `yarn ci:process`
+
+[Process](https://circleci.com/docs/2.0/local-cli/#processing-a-config) the current CircleCI config
 
 ## License
 
