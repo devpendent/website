@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@snowcoders/sortier": "2.6.1",
-    "babel-jest": "24.7.1",
+    "babel-jest": "24.8.0",
     "babel-plugin-emotion": "10.0.9",
     "babel-preset-gatsby": "0.1.11",
     "cross-env": "5.2.0",
@@ -49,7 +49,7 @@
     "husky": "2.2.0",
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "1.1.1",
-    "jest": "24.7.1",
+    "jest": "24.8.0",
     "jest-dom": "3.1.4",
     "jest-emotion": "10.0.10",
     "lint-staged": "8.1.6",
