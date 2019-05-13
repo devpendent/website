@@ -8,7 +8,7 @@ const Template = ({ data }) => {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <SEO title='Posts' />
+      <SEO title={frontmatter.title} />
       <h1>{frontmatter.title}</h1>
       <div className='blog-post-container'>
         <div className='blog-post'>
