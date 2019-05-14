@@ -61,7 +61,8 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to='/submit/'>Submit Form C1</Link> |{' '}
-    <Link to='/page-2/'>Go to page 2</Link>
+    <Link to='/page-2/'>Go to page 2</Link> |{' '}
+    <Link to='/blog/sample-markdown-post'>Markdown Sample Page</Link>
   </Layout>
 )
 
