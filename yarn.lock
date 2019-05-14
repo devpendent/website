@@ -6030,10 +6030,10 @@ gatsby-plugin-emotion@4.0.6:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.5"
 
-gatsby-plugin-less@2.0.12:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-less/-/gatsby-plugin-less-2.0.12.tgz#f00b807b3411a33cef25d0568da81e5578c6980a"
-  integrity sha512-99/unXnBI9lrLbmMboOUUo23B8HvzMVzYUy0oiU5UbaowwhQp0ILAtOjmR2tiOLRcn7ZWlM4pdKz3EUu6B3kLQ==
+gatsby-plugin-less@2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-less/-/gatsby-plugin-less-2.0.13.tgz#58bef37c7708611fd4d9667dfeafe3b246c0cbf9"
+  integrity sha512-JCUeUayeGlnJiLbyLwoOnfbmns+ZXtSxJDKQ14LreDBJwhG3TtLkIS/aGSsukY0F6vGRj4m6//5opBP4JrkiVw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     less-loader "^4.1.0"
@@ -6192,10 +6192,10 @@ gatsby-transformer-sharp@2.1.19:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.4.3.tgz#30bc286583baa9e2a6e37aad2986fe02e8a03ffd"
-  integrity sha512-PoUSY7dRho+JwTa5igvTMc/EWOIl65WZcWIDq4kHqVDag5qtuAK1PPHieOOeFeNBInwvJQdhAxaCaDE4vfymmw==
+gatsby@2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.4.4.tgz#6630f0f9f118c6a7ac95499b1d4b58b338f98c96"
+  integrity sha512-3swyIlElBanL2fQ7jqaiHbUZ0c2tOjMy1t55lAXCp/OUXx/qEJXWWAYY9+rQmC23+WysPGpir6vEBNPw9WFgtA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
