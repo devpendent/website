@@ -48,7 +48,7 @@ const _SubmitForm = ({
   return (
     <Form colon={false} layout='vertical' onSubmit={handleSubmit}>
       <FormContext.Provider value={contextValue}>
-        <Form.Item label='Upload' />
+        {/* TODO: <Form.Item label='Upload' /> */}
         <NumberField
           id='candidateA'
           label='Calon A'
