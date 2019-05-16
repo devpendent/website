@@ -11,7 +11,13 @@ describe('SubmitForm', () => {
     warn.mockClear()
   })
 
-  it.each([['Calon A'], ['Calon B']])('renders %s field as a number', label => {
+  it.each([
+    ['Calon A'],
+    ['Calon B'],
+    ['Tidak Sah'],
+    ['Sah'],
+    ['Sah + Tidak Sah']
+  ])('renders %s field as a number', label => {
     const { getByLabelText } = render(<SubmitForm onSubmit={onSubmit} />)
 
     const calonA = getByLabelText(label)
@@ -32,13 +38,27 @@ describe('SubmitForm', () => {
     )
     expect(errorCalonA).toBeVisible()
     expect(getByText('Masukkan total perolehan suara Calon B')).toBeVisible()
+    expect(getByText('Masukkan jumlah suara tidak sah')).toBeVisible()
+    expect(getByText('Masukkan jumlah seluruh suara sah (A + B)')).toBeVisible()
+    expect(
+      getByText('Masukkan jumlah seluruh suara sah dan suara tidak sah')
+    ).toBeVisible()
 
-    expect(warn).toHaveBeenCalledTimes(2)
+    expect(warn).toHaveBeenCalledTimes(5)
     expect(warn).toHaveBeenNthCalledWith(1, 'async-validator:', [
       'candidateA is required'
     ])
     expect(warn).toHaveBeenNthCalledWith(2, 'async-validator:', [
       'candidateB is required'
+    ])
+    expect(warn).toHaveBeenNthCalledWith(3, 'async-validator:', [
+      'invalid is required'
+    ])
+    expect(warn).toHaveBeenNthCalledWith(4, 'async-validator:', [
+      'valid is required'
+    ])
+    expect(warn).toHaveBeenNthCalledWith(5, 'async-validator:', [
+      'total is required'
     ])
   })
 
@@ -69,6 +89,11 @@ describe('SubmitForm', () => {
 
     fireEvent.change(getByLabelText('Calon A'), { target: { value: '123' } })
     fireEvent.change(getByLabelText('Calon B'), { target: { value: '456' } })
+    fireEvent.change(getByLabelText('Tidak Sah'), { target: { value: '21' } })
+    fireEvent.change(getByLabelText('Sah'), { target: { value: '579' } })
+    fireEvent.change(getByLabelText('Sah + Tidak Sah'), {
+      target: { value: '600' }
+    })
     fireEvent.submit(getByText('Kirim'))
 
     expect(
@@ -82,7 +107,10 @@ describe('SubmitForm', () => {
     expect(onSubmit).toHaveBeenCalledTimes(1)
     expect(onSubmit).toHaveBeenNthCalledWith(1, {
       candidateA: 123,
-      candidateB: 456
+      candidateB: 456,
+      invalid: 21,
+      total: 600,
+      valid: 579
     })
   })
 

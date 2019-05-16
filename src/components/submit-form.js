@@ -7,22 +7,20 @@ const FormContext = createContext({})
 const NumberField = ({ id, label, placeholder, requiredMessage }) => {
   const { getFieldDecorator } = useContext(FormContext)
   return (
-    <Col sm={12} xs={24}>
-      <Form.Item label={label}>
-        {getFieldDecorator(id, {
-          rules: [
-            {
-              message: requiredMessage,
-              required: true
-            },
-            {
-              max: 3,
-              message: 'Total suara tidak boleh melebihi 3 digit angka'
-            }
-          ]
-        })(<Input placeholder={placeholder} type='number' />)}
-      </Form.Item>
-    </Col>
+    <Form.Item label={label}>
+      {getFieldDecorator(id, {
+        rules: [
+          {
+            message: requiredMessage,
+            required: true
+          },
+          {
+            max: 3,
+            message: 'Total suara tidak boleh melebihi 3 digit angka'
+          }
+        ]
+      })(<Input placeholder={placeholder} type='number' />)}
+    </Form.Item>
   )
 }
 
@@ -41,11 +39,14 @@ const _SubmitForm = ({
 
   const handleSubmit = e => {
     e.preventDefault()
-    validateFields((err, { candidateA, candidateB }) => {
+    validateFields((err, { candidateA, candidateB, invalid, total, valid }) => {
       if (!err) {
         onSubmit({
           candidateA: Number(candidateA),
-          candidateB: Number(candidateB)
+          candidateB: Number(candidateB),
+          invalid: Number(invalid),
+          total: Number(total),
+          valid: Number(valid)
         })
       }
     })
@@ -61,18 +62,48 @@ const _SubmitForm = ({
       <FormContext.Provider value={contextValue}>
         {/* TODO: <Form.Item label='Upload' /> */}
         <Row gutter={16}>
-          <NumberField
-            id='candidateA'
-            label='Calon A'
-            placeholder='Total suara Calon A'
-            requiredMessage='Masukkan total perolehan suara Calon A'
-          />
-          <NumberField
-            id='candidateB'
-            label='Calon B'
-            placeholder='Total suara Calon B'
-            requiredMessage='Masukkan total perolehan suara Calon B'
-          />
+          <Col sm={12} xs={24}>
+            <NumberField
+              id='candidateA'
+              label='Calon A'
+              placeholder='Total suara Calon A'
+              requiredMessage='Masukkan total perolehan suara Calon A'
+            />
+          </Col>
+          <Col sm={12} xs={24}>
+            <NumberField
+              id='candidateB'
+              label='Calon B'
+              placeholder='Total suara Calon B'
+              requiredMessage='Masukkan total perolehan suara Calon B'
+            />
+          </Col>
+        </Row>
+        <Row gutter={16}>
+          <Col sm={8} xs={24}>
+            <NumberField
+              id='invalid'
+              label='Tidak Sah'
+              placeholder='Jumlah suara tidak sah'
+              requiredMessage='Masukkan jumlah suara tidak sah'
+            />
+          </Col>
+          <Col sm={8} xs={24}>
+            <NumberField
+              id='valid'
+              label='Sah'
+              placeholder='Jumlah seluruh suara sah'
+              requiredMessage='Masukkan jumlah seluruh suara sah (A + B)'
+            />
+          </Col>
+          <Col sm={8} xs={24}>
+            <NumberField
+              id='total'
+              label='Sah + Tidak Sah'
+              placeholder='Jumlah seluruh suara sah dan suara tidak sah'
+              requiredMessage='Masukkan jumlah seluruh suara sah dan suara tidak sah'
+            />
+          </Col>
         </Row>
         <Row gutter={16}>
           <Col>
