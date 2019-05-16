@@ -24,6 +24,20 @@ describe('Submit Page', () => {
     )
   })
 
+  it('validates maximum digits correctly', () => {
+    cy.getByLabelText('Calon A').type('1234')
+    cy.getExplainByLabelText('Calon A').should(
+      'have.text',
+      'Total suara tidak boleh melebihi 3 digit angka'
+    )
+
+    cy.getByLabelText('Calon B').type('5678')
+    cy.getExplainByLabelText('Calon B').should(
+      'have.text',
+      'Total suara tidak boleh melebihi 3 digit angka'
+    )
+  })
+
   it('submit the forms correctly', () => {
     cy.getByLabelText('Calon A').type('123')
     cy.getByLabelText('Calon B').type('456')
