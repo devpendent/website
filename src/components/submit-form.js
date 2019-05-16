@@ -1,4 +1,4 @@
-import { Button, Form, Input } from 'antd'
+import { Button, Col, Form, Input, Row } from 'antd'
 import PropTypes from 'prop-types'
 import React, { createContext, useContext } from 'react'
 
@@ -7,16 +7,18 @@ const FormContext = createContext({})
 const NumberField = ({ id, label, message, placeholder }) => {
   const { getFieldDecorator } = useContext(FormContext)
   return (
-    <Form.Item label={label}>
-      {getFieldDecorator(id, {
-        rules: [
-          {
-            message,
-            required: true
-          }
-        ]
-      })(<Input placeholder={placeholder} type='number' />)}
-    </Form.Item>
+    <Col sm={12} xs={24}>
+      <Form.Item label={label}>
+        {getFieldDecorator(id, {
+          rules: [
+            {
+              message,
+              required: true
+            }
+          ]
+        })(<Input placeholder={placeholder} type='number' />)}
+      </Form.Item>
+    </Col>
   )
 }
 
@@ -49,23 +51,29 @@ const _SubmitForm = ({
     <Form colon={false} layout='vertical' onSubmit={handleSubmit}>
       <FormContext.Provider value={contextValue}>
         {/* TODO: <Form.Item label='Upload' /> */}
-        <NumberField
-          id='candidateA'
-          label='Calon A'
-          message='Masukkan total perolehan suara Calon A'
-          placeholder='Total suara Calon A'
-        />
-        <NumberField
-          id='candidateB'
-          label='Calon B'
-          message='Masukkan total perolehan suara Calon B'
-          placeholder='Total suara Calon B'
-        />
-        <Form.Item>
-          <Button htmlType='submit' type='primary'>
-            Kirim
-          </Button>
-        </Form.Item>
+        <Row gutter={16}>
+          <NumberField
+            id='candidateA'
+            label='Calon A'
+            message='Masukkan total perolehan suara Calon A'
+            placeholder='Total suara Calon A'
+          />
+          <NumberField
+            id='candidateB'
+            label='Calon B'
+            message='Masukkan total perolehan suara Calon B'
+            placeholder='Total suara Calon B'
+          />
+        </Row>
+        <Row gutter={16}>
+          <Col>
+            <Form.Item>
+              <Button htmlType='submit' type='primary'>
+                Kirim
+              </Button>
+            </Form.Item>
+          </Col>
+        </Row>
       </FormContext.Provider>
     </Form>
   )
