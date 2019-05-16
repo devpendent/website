@@ -84,6 +84,18 @@ const _SubmitForm = ({
     [getFieldsValue]
   )
 
+  const validateTotal = useCallback(
+    (rule, value, callback) => {
+      let error
+      const { invalid, valid } = getFieldsValue(['invalid', 'valid'])
+      if (value && Number(value) !== Number(invalid) + Number(valid)) {
+        error = `${rule.field} is mathematically incorrect`
+      }
+      callback(error)
+    },
+    [getFieldsValue]
+  )
+
   return (
     <Form
       autoComplete='off'
@@ -136,6 +148,8 @@ const _SubmitForm = ({
               label='Sah + Tidak Sah'
               placeholder='Jumlah seluruh suara sah dan suara tidak sah'
               requiredMessage='Masukkan jumlah seluruh suara sah dan suara tidak sah'
+              validator={validateTotal}
+              validatorMessage='Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
             />
           </Col>
         </Row>

@@ -70,6 +70,25 @@ describe('Submit Page', () => {
     )
   })
 
+  it('validates incorrect total calculation correctly', () => {
+    cy.getByLabelText('Calon A').type('123')
+    cy.getByLabelText('Calon B').type('456')
+    cy.getByLabelText('Tidak Sah').type('21')
+    cy.getByLabelText('Sah').type('579')
+    cy.getByLabelText('Sah + Tidak Sah').type('601')
+
+    cy.getExplainByLabelText('Sah + Tidak Sah').should(
+      'have.text',
+      'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
+    )
+
+    cy.getByLabelText('Sah + Tidak Sah').type('{backspace}0')
+    cy.getExplainByLabelText('Sah + Tidak Sah').should(
+      'not.have.text',
+      'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
+    )
+  })
+
   it('submit the forms correctly', () => {
     cy.getByLabelText('Calon A').type('123')
     cy.getByLabelText('Calon B').type('456')

@@ -100,6 +100,30 @@ describe('SubmitForm', () => {
     ])
   })
 
+  it('validates incorrect total calculation correctly', async () => {
+    const { findByText, getByLabelText } = render(
+      <SubmitForm onSubmit={onSubmit} />
+    )
+
+    fireEvent.change(getByLabelText('Calon A'), { target: { value: '123' } })
+    fireEvent.change(getByLabelText('Calon B'), { target: { value: '456' } })
+    fireEvent.change(getByLabelText('Tidak Sah'), { target: { value: '21' } })
+    fireEvent.change(getByLabelText('Sah'), { target: { value: '579' } })
+    fireEvent.change(getByLabelText('Sah + Tidak Sah'), {
+      target: { value: '601' }
+    })
+
+    const errorTotal = await findByText(
+      'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
+    )
+    expect(errorTotal).toBeVisible()
+
+    expect(warn).toHaveBeenCalledTimes(1)
+    expect(warn).toHaveBeenNthCalledWith(1, 'async-validator:', [
+      'total is mathematically incorrect'
+    ])
+  })
+
   it('submit forms correctly', () => {
     const { getByLabelText, getByText, queryByText } = render(
       <SubmitForm onSubmit={onSubmit} />
