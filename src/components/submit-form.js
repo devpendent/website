@@ -4,6 +4,9 @@ import React, { createContext, useCallback, useContext, useMemo } from 'react'
 
 const FormContext = createContext({})
 
+const Col2 = props => <Col sm={12} xs={24} {...props} />
+const Col3 = props => <Col sm={8} xs={24} {...props} />
+
 const NumberField = ({
   id,
   label,
@@ -125,33 +128,33 @@ const _SubmitForm = ({
       <FormContext.Provider value={contextValue}>
         {/* TODO: <Form.Item label='Upload' /> */}
         <Row gutter={16}>
-          <Col sm={12} xs={24}>
+          <Col2>
             <NumberField
               id='candidateA'
               label='Calon A'
               placeholder='Total suara Calon A'
               requiredMessage='Masukkan total perolehan suara Calon A'
             />
-          </Col>
-          <Col sm={12} xs={24}>
+          </Col2>
+          <Col2>
             <NumberField
               id='candidateB'
               label='Calon B'
               placeholder='Total suara Calon B'
               requiredMessage='Masukkan total perolehan suara Calon B'
             />
-          </Col>
+          </Col2>
         </Row>
         <Row gutter={16}>
-          <Col sm={8} xs={24}>
+          <Col3>
             <NumberField
               id='invalid'
               label='Tidak Sah'
               placeholder='Jumlah suara tidak sah'
               requiredMessage='Masukkan jumlah suara tidak sah'
             />
-          </Col>
-          <Col sm={8} xs={24}>
+          </Col3>
+          <Col3>
             <NumberField
               id='valid'
               label='Sah'
@@ -160,8 +163,8 @@ const _SubmitForm = ({
               validator={validateSuaraSah}
               validatorMessage='Perhitungan suara sah salah'
             />
-          </Col>
-          <Col sm={8} xs={24}>
+          </Col3>
+          <Col3>
             <NumberField
               id='total'
               label='Sah + Tidak Sah'
@@ -170,7 +173,7 @@ const _SubmitForm = ({
               validator={validateTotal}
               validatorMessage='Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
             />
-          </Col>
+          </Col3>
         </Row>
         <Row gutter={16}>
           <Col>
