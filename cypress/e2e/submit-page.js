@@ -17,22 +17,27 @@ describe('Submit Page', () => {
     cy.getByLabelText('Sah + Tidak Sah').type('mno')
     cy.getByText('Kirim').click({ force: true })
 
+    cy.assertErrorByLabelText('Calon A')
     cy.getExplainByLabelText('Calon A').should(
       'have.text',
       'Masukkan total perolehan suara Calon A'
     )
+    cy.assertErrorByLabelText('Calon B')
     cy.getExplainByLabelText('Calon B').should(
       'have.text',
       'Masukkan total perolehan suara Calon B'
     )
+    cy.assertErrorByLabelText('Tidak Sah')
     cy.getExplainByLabelText('Tidak Sah').should(
       'have.text',
       'Masukkan jumlah suara tidak sah'
     )
+    cy.assertErrorByLabelText('Sah')
     cy.getExplainByLabelText('Sah').should(
       'have.text',
       'Masukkan jumlah seluruh suara sah (A + B)'
     )
+    cy.assertErrorByLabelText('Sah + Tidak Sah')
     cy.getExplainByLabelText('Sah + Tidak Sah').should(
       'have.text',
       'Masukkan jumlah seluruh suara sah dan suara tidak sah'
@@ -41,12 +46,14 @@ describe('Submit Page', () => {
 
   it('validates maximum digits correctly', () => {
     cy.getByLabelText('Calon A').type('1234')
+    cy.assertErrorByLabelText('Calon A')
     cy.getExplainByLabelText('Calon A').should(
       'have.text',
       'Total suara tidak boleh melebihi 3 digit angka'
     )
 
     cy.getByLabelText('Calon B').type('5678')
+    cy.assertErrorByLabelText('Calon B')
     cy.getExplainByLabelText('Calon B').should(
       'have.text',
       'Total suara tidak boleh melebihi 3 digit angka'
@@ -58,6 +65,7 @@ describe('Submit Page', () => {
     cy.getByLabelText('Calon B').type('456')
     cy.getByLabelText('Sah').type('578')
 
+    cy.assertWarningByLabelText('Sah')
     cy.getExplainByLabelText('Sah').should(
       'have.text',
       'Perhitungan suara sah salah'
@@ -77,6 +85,7 @@ describe('Submit Page', () => {
     cy.getByLabelText('Sah').type('579')
     cy.getByLabelText('Sah + Tidak Sah').type('601')
 
+    cy.assertWarningByLabelText('Sah + Tidak Sah')
     cy.getExplainByLabelText('Sah + Tidak Sah').should(
       'have.text',
       'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'

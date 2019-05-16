@@ -1,6 +1,6 @@
 import { Button, Col, Form, Input, Row } from 'antd'
 import PropTypes from 'prop-types'
-import React, { createContext, useCallback, useContext } from 'react'
+import React, { createContext, useCallback, useContext, useMemo } from 'react'
 
 const FormContext = createContext({})
 
@@ -12,9 +12,22 @@ const NumberField = ({
   validator,
   validatorMessage
 }) => {
-  const { getFieldDecorator } = useContext(FormContext)
+  const { getFieldDecorator, getFieldError } = useContext(FormContext)
+  const getValidateStatus = errors => {
+    if (!errors) {
+      return 'success'
+    } else if (errors.length === 1 && errors[0] === validatorMessage) {
+      return 'warning'
+    } else if (errors.length > 0) {
+      return 'error'
+    }
+  }
+
   return (
-    <Form.Item label={label}>
+    <Form.Item
+      label={label}
+      validateStatus={getValidateStatus(getFieldError(id))}
+    >
       {getFieldDecorator(id, {
         rules: [
           {
@@ -44,10 +57,16 @@ NumberField.propTypes = {
 }
 
 const _SubmitForm = ({
-  form: { getFieldDecorator, getFieldsValue, validateFields },
+  form: { getFieldDecorator, getFieldError, getFieldsValue, validateFields },
   onSubmit
 }) => {
-  const contextValue = { getFieldDecorator }
+  const contextValue = useMemo(
+    () => ({
+      getFieldDecorator,
+      getFieldError
+    }),
+    [getFieldDecorator, getFieldError]
+  )
 
   const handleSubmit = useCallback(
     e => {
