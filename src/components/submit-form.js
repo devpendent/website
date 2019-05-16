@@ -91,16 +91,21 @@ const _SubmitForm = ({
     [validateFields]
   )
 
+  const sum = useCallback(
+    ids =>
+      ids.reduce(
+        (accumulator, id) => accumulator + Number(getFieldValue(id)),
+        0
+      ),
+    [getFieldValue]
+  )
+
   const validateSum = useCallback(
     ids =>
       useCallback(
         (rule, value, callback) => {
           let error
-          if (
-            value &&
-            Number(value) !==
-              Number(getFieldValue(ids[0])) + Number(getFieldValue(ids[1]))
-          ) {
+          if (value && Number(value) !== sum(ids)) {
             error = `${rule.field} is mathematically incorrect`
           }
           callback(error)
@@ -162,7 +167,7 @@ const _SubmitForm = ({
               label='Sah + Tidak Sah'
               placeholder='Jumlah seluruh suara sah dan suara tidak sah'
               requiredMessage='Masukkan jumlah seluruh suara sah dan suara tidak sah'
-              validator={validateSum(['invalid', 'valid'])}
+              validator={validateSum(['invalid', 'candidateA', 'candidateB'])}
               validatorMessage='Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
             />
           </Col3>
