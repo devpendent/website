@@ -21,9 +21,8 @@ const NumberField = ({
       return 'success'
     } else if (errors.length === 1 && errors[0] === validatorMessage) {
       return 'warning'
-    } else if (errors.length > 0) {
-      return 'error'
     }
+    return 'error'
   }
 
   return (
