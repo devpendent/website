@@ -4,7 +4,7 @@ import React, { createContext, useContext } from 'react'
 
 const FormContext = createContext({})
 
-const NumberField = ({ id, label, message, placeholder }) => {
+const NumberField = ({ id, label, placeholder, requiredMessage }) => {
   const { getFieldDecorator } = useContext(FormContext)
   return (
     <Col sm={12} xs={24}>
@@ -12,8 +12,12 @@ const NumberField = ({ id, label, message, placeholder }) => {
         {getFieldDecorator(id, {
           rules: [
             {
-              message,
+              message: requiredMessage,
               required: true
+            },
+            {
+              max: 3,
+              message: 'Total suara tidak boleh melebihi 3 digit angka'
             }
           ]
         })(<Input placeholder={placeholder} type='number' />)}
@@ -25,8 +29,8 @@ const NumberField = ({ id, label, message, placeholder }) => {
 NumberField.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired
+  placeholder: PropTypes.string.isRequired,
+  requiredMessage: PropTypes.string.isRequired
 }
 
 const _SubmitForm = ({
@@ -55,14 +59,14 @@ const _SubmitForm = ({
           <NumberField
             id='candidateA'
             label='Calon A'
-            message='Masukkan total perolehan suara Calon A'
             placeholder='Total suara Calon A'
+            requiredMessage='Masukkan total perolehan suara Calon A'
           />
           <NumberField
             id='candidateB'
             label='Calon B'
-            message='Masukkan total perolehan suara Calon B'
             placeholder='Total suara Calon B'
+            requiredMessage='Masukkan total perolehan suara Calon B'
           />
         </Row>
         <Row gutter={16}>

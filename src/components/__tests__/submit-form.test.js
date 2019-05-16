@@ -41,6 +41,25 @@ describe('SubmitForm', () => {
     ])
   })
 
+  it('validates maximum digit on number field correctly', async () => {
+    const { getByLabelText, getByText } = render(
+      <SubmitForm onSubmit={onSubmit} />
+    )
+
+    const calonA = getByLabelText('Calon A')
+    fireEvent.change(calonA, { target: { value: '1234' } })
+    expect(calonA).toHaveProperty('value', '1234')
+
+    const errorCalonA = await waitForElement(() =>
+      getByText('Total suara tidak boleh melebihi 3 digit angka'))
+    expect(errorCalonA).toBeVisible()
+
+    expect(warn).toHaveBeenCalledTimes(1)
+    expect(warn).toHaveBeenNthCalledWith(1, 'async-validator:', [
+      'candidateA cannot be longer than 3 characters'
+    ])
+  })
+
   it('submit forms correctly', () => {
     const { getByLabelText, getByText, queryByText } = render(
       <SubmitForm onSubmit={onSubmit} />
