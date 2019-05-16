@@ -60,7 +60,7 @@ NumberField.propTypes = {
 }
 
 const _SubmitForm = ({
-  form: { getFieldDecorator, getFieldError, getFieldsValue, validateFields },
+  form: { getFieldDecorator, getFieldError, getFieldValue, validateFields },
   onSubmit
 }) => {
   const contextValue = useMemo(
@@ -91,31 +91,23 @@ const _SubmitForm = ({
     [validateFields]
   )
 
-  const validateSuaraSah = useCallback(
-    (rule, value, callback) => {
-      let error
-      const { candidateA, candidateB } = getFieldsValue([
-        'candidateA',
-        'candidateB'
-      ])
-      if (value && Number(value) !== Number(candidateA) + Number(candidateB)) {
-        error = `${rule.field} is mathematically incorrect`
-      }
-      callback(error)
-    },
-    [getFieldsValue]
-  )
-
-  const validateTotal = useCallback(
-    (rule, value, callback) => {
-      let error
-      const { invalid, valid } = getFieldsValue(['invalid', 'valid'])
-      if (value && Number(value) !== Number(invalid) + Number(valid)) {
-        error = `${rule.field} is mathematically incorrect`
-      }
-      callback(error)
-    },
-    [getFieldsValue]
+  const validateSum = useCallback(
+    ids =>
+      useCallback(
+        (rule, value, callback) => {
+          let error
+          if (
+            value &&
+            Number(value) !==
+              Number(getFieldValue(ids[0])) + Number(getFieldValue(ids[1]))
+          ) {
+            error = `${rule.field} is mathematically incorrect`
+          }
+          callback(error)
+        },
+        [getFieldValue]
+      ),
+    [getFieldValue]
   )
 
   return (
@@ -160,7 +152,7 @@ const _SubmitForm = ({
               label='Sah'
               placeholder='Jumlah seluruh suara sah'
               requiredMessage='Masukkan jumlah seluruh suara sah (A + B)'
-              validator={validateSuaraSah}
+              validator={validateSum(['candidateA', 'candidateB'])}
               validatorMessage='Perhitungan suara sah salah'
             />
           </Col3>
@@ -170,7 +162,7 @@ const _SubmitForm = ({
               label='Sah + Tidak Sah'
               placeholder='Jumlah seluruh suara sah dan suara tidak sah'
               requiredMessage='Masukkan jumlah seluruh suara sah dan suara tidak sah'
-              validator={validateTotal}
+              validator={validateSum(['invalid', 'valid'])}
               validatorMessage='Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
             />
           </Col3>
