@@ -1,6 +1,6 @@
 import SubmitForm from 'components/submit-form'
 import React from 'react'
-import { fireEvent, render, waitForElement } from 'react-testing-library'
+import { fireEvent, render } from 'react-testing-library'
 
 describe('SubmitForm', () => {
   const onSubmit = jest.fn()
@@ -22,13 +22,14 @@ describe('SubmitForm', () => {
   })
 
   it('validates field requirements correctly', async () => {
-    const { getByText } = render(<SubmitForm onSubmit={onSubmit} />)
+    const { findByText, getByText } = render(<SubmitForm onSubmit={onSubmit} />)
 
     const submit = getByText('Kirim')
     fireEvent.submit(submit)
 
-    const errorCalonA = await waitForElement(() =>
-      getByText('Masukkan total perolehan suara Calon A'))
+    const errorCalonA = await findByText(
+      'Masukkan total perolehan suara Calon A'
+    )
     expect(errorCalonA).toBeVisible()
     expect(getByText('Masukkan total perolehan suara Calon B')).toBeVisible()
 
@@ -42,7 +43,7 @@ describe('SubmitForm', () => {
   })
 
   it('validates maximum digit on number field correctly', async () => {
-    const { getByLabelText, getByText } = render(
+    const { findByText, getByLabelText } = render(
       <SubmitForm onSubmit={onSubmit} />
     )
 
@@ -50,8 +51,9 @@ describe('SubmitForm', () => {
     fireEvent.change(calonA, { target: { value: '1234' } })
     expect(calonA).toHaveProperty('value', '1234')
 
-    const errorCalonA = await waitForElement(() =>
-      getByText('Total suara tidak boleh melebihi 3 digit angka'))
+    const errorCalonA = await findByText(
+      'Total suara tidak boleh melebihi 3 digit angka'
+    )
     expect(errorCalonA).toBeVisible()
 
     expect(warn).toHaveBeenCalledTimes(1)
