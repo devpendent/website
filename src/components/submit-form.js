@@ -52,7 +52,12 @@ const _SubmitForm = ({
   }
 
   return (
-    <Form colon={false} layout='vertical' onSubmit={handleSubmit}>
+    <Form
+      autoComplete='off'
+      colon={false}
+      layout='vertical'
+      onSubmit={handleSubmit}
+    >
       <FormContext.Provider value={contextValue}>
         {/* TODO: <Form.Item label='Upload' /> */}
         <Row gutter={16}>

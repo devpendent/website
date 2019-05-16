@@ -83,4 +83,10 @@ describe('SubmitForm', () => {
       candidateB: 456
     })
   })
+
+  it('disables autocompletion on the form', () => {
+    const { container } = render(<SubmitForm onSubmit={onSubmit} />)
+
+    expect(container.firstChild).toHaveAttribute('autocomplete', 'off')
+  })
 })
