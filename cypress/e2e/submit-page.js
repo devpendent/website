@@ -53,6 +53,23 @@ describe('Submit Page', () => {
     )
   })
 
+  it('validates incorrect suara sah calculation correctly', () => {
+    cy.getByLabelText('Calon A').type('123')
+    cy.getByLabelText('Calon B').type('456')
+    cy.getByLabelText('Sah').type('578')
+
+    cy.getExplainByLabelText('Sah').should(
+      'have.text',
+      'Perhitungan suara sah salah'
+    )
+
+    cy.getByLabelText('Sah').type('{backspace}9')
+    cy.getExplainByLabelText('Sah').should(
+      'not.have.text',
+      'Perhitungan suara sah salah'
+    )
+  })
+
   it('submit the forms correctly', () => {
     cy.getByLabelText('Calon A').type('123')
     cy.getByLabelText('Calon B').type('456')

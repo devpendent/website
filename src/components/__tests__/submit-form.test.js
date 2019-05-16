@@ -82,6 +82,24 @@ describe('SubmitForm', () => {
     ])
   })
 
+  it('validates incorrect suara sah calculation correctly', async () => {
+    const { findByText, getByLabelText } = render(
+      <SubmitForm onSubmit={onSubmit} />
+    )
+
+    fireEvent.change(getByLabelText('Calon A'), { target: { value: '123' } })
+    fireEvent.change(getByLabelText('Calon B'), { target: { value: '456' } })
+    fireEvent.change(getByLabelText('Sah'), { target: { value: '578' } })
+
+    const errorSuaraSah = await findByText('Perhitungan suara sah salah')
+    expect(errorSuaraSah).toBeVisible()
+
+    expect(warn).toHaveBeenCalledTimes(1)
+    expect(warn).toHaveBeenNthCalledWith(1, 'async-validator:', [
+      'valid is mathematically incorrect'
+    ])
+  })
+
   it('submit forms correctly', () => {
     const { getByLabelText, getByText, queryByText } = render(
       <SubmitForm onSubmit={onSubmit} />

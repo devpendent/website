@@ -1,10 +1,17 @@
 import { Button, Col, Form, Input, Row } from 'antd'
 import PropTypes from 'prop-types'
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useCallback, useContext } from 'react'
 
 const FormContext = createContext({})
 
-const NumberField = ({ id, label, placeholder, requiredMessage }) => {
+const NumberField = ({
+  id,
+  label,
+  placeholder,
+  requiredMessage,
+  validator,
+  validatorMessage
+}) => {
   const { getFieldDecorator } = useContext(FormContext)
   return (
     <Form.Item label={label}>
@@ -17,7 +24,10 @@ const NumberField = ({ id, label, placeholder, requiredMessage }) => {
           {
             max: 3,
             message: 'Total suara tidak boleh melebihi 3 digit angka'
-          }
+          },
+          ...(validator && validatorMessage
+            ? [{ validator, message: validatorMessage }]
+            : [])
         ]
       })(<Input placeholder={placeholder} type='number' />)}
     </Form.Item>
@@ -28,29 +38,51 @@ NumberField.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  requiredMessage: PropTypes.string.isRequired
+  requiredMessage: PropTypes.string,
+  validator: PropTypes.func,
+  validatorMessage: PropTypes.string
 }
 
 const _SubmitForm = ({
-  form: { getFieldDecorator, validateFields },
+  form: { getFieldDecorator, getFieldsValue, validateFields },
   onSubmit
 }) => {
   const contextValue = { getFieldDecorator }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    validateFields((err, { candidateA, candidateB, invalid, total, valid }) => {
-      if (!err) {
-        onSubmit({
-          candidateA: Number(candidateA),
-          candidateB: Number(candidateB),
-          invalid: Number(invalid),
-          total: Number(total),
-          valid: Number(valid)
-        })
+  const handleSubmit = useCallback(
+    e => {
+      e.preventDefault()
+      validateFields(
+        (err, { candidateA, candidateB, invalid, total, valid }) => {
+          if (!err) {
+            onSubmit({
+              candidateA: Number(candidateA),
+              candidateB: Number(candidateB),
+              invalid: Number(invalid),
+              total: Number(total),
+              valid: Number(valid)
+            })
+          }
+        }
+      )
+    },
+    [validateFields]
+  )
+
+  const validateSuaraSah = useCallback(
+    (rule, value, callback) => {
+      let error
+      const { candidateA, candidateB } = getFieldsValue([
+        'candidateA',
+        'candidateB'
+      ])
+      if (value && Number(value) !== Number(candidateA) + Number(candidateB)) {
+        error = `${rule.field} is mathematically incorrect`
       }
-    })
-  }
+      callback(error)
+    },
+    [getFieldsValue]
+  )
 
   return (
     <Form
@@ -94,6 +126,8 @@ const _SubmitForm = ({
               label='Sah'
               placeholder='Jumlah seluruh suara sah'
               requiredMessage='Masukkan jumlah seluruh suara sah (A + B)'
+              validator={validateSuaraSah}
+              validatorMessage='Perhitungan suara sah salah'
             />
           </Col>
           <Col sm={8} xs={24}>
