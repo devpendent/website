@@ -27,11 +27,11 @@
 Cypress.Commands.add('getExplainByLabelText', labelText =>
   cy
     .getByLabelText(labelText)
-    .parentsUntil('.ant-form-item-control')
+    .closest('.ant-form-item-children')
     .next())
 
 Cypress.Commands.add('getExplainByTestId', testId =>
   cy
     .getByTestId(testId)
-    .parentsUntil('.ant-form-item-control')
+    .closest('.ant-form-item-children')
     .next())
