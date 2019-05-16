@@ -36,14 +36,5 @@ Cypress.Commands.add('getExplainByTestId', testId =>
     .closest('.ant-form-item-children')
     .next())
 
-Cypress.Commands.add('assertWarningByLabelText', labelText =>
-  cy
-    .getByLabelText(labelText)
-    .closest('.ant-form-item-control')
-    .should('have.class', 'has-warning'))
-
-Cypress.Commands.add('assertErrorByLabelText', labelText =>
-  cy
-    .getByLabelText(labelText)
-    .closest('.ant-form-item-control')
-    .should('have.class', 'has-error'))
+Cypress.Commands.add('getFormItemByLabelText', labelText =>
+  cy.getByLabelText(labelText).closest('.ant-form-item-control'))
