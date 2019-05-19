@@ -28,7 +28,7 @@ exports[`Image renders correctly 1`] = `
     />
   </picture>
   <noscript>
-    &lt;picture&gt;&lt;img sizes="(max-width: 300px) 100vw, 300px" srcset="/static/6d91c86c0fde632ba4cd01062fd9ccfa/e1fed/gatsby-astronaut.png 75w,
+    &lt;picture&gt;&lt;img loading="lazy" sizes="(max-width: 300px) 100vw, 300px" srcset="/static/6d91c86c0fde632ba4cd01062fd9ccfa/e1fed/gatsby-astronaut.png 75w,
 /static/6d91c86c0fde632ba4cd01062fd9ccfa/08283/gatsby-astronaut.png 150w,
 /static/6d91c86c0fde632ba4cd01062fd9ccfa/fbe2f/gatsby-astronaut.png 300w,
 /static/6d91c86c0fde632ba4cd01062fd9ccfa/59257/gatsby-astronaut.png 450w,
