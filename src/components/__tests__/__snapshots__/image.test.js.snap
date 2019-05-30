@@ -16,6 +16,7 @@ exports[`Image renders correctly 1`] = `
   <picture>
     <img
       alt=""
+      loading="lazy"
       sizes="(max-width: 300px) 100vw, 300px"
       src="/static/6d91c86c0fde632ba4cd01062fd9ccfa/fbe2f/gatsby-astronaut.png"
       srcset="/static/6d91c86c0fde632ba4cd01062fd9ccfa/e1fed/gatsby-astronaut.png 75w,
