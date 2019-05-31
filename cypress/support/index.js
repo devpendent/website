@@ -13,8 +13,8 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import cypress-testing-library
-import 'cypress-testing-library/add-commands'
+// Import @testing-library/cypress
+import '@testing-library/cypress/add-commands'
 
 // Import commands.js using ES2015 syntax:
 import './commands'

@@ -1,8 +1,8 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
 
-// type definitions for cypress-testing-library extension
-/// <reference types="../cypress-testing-library/typings" />
+// type definitions for @testing-library/cypress extension
+/// <reference types="../@testing-library/cypress/typings" />
 
 import meta from '../../gatsby-config.js'
 
