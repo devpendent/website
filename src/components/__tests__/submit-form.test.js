@@ -1,6 +1,6 @@
+import { fireEvent, render } from '@testing-library/react'
 import SubmitForm from 'components/submit-form'
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
 
 describe('SubmitForm', () => {
   const onSubmit = jest.fn()

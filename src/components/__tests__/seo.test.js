@@ -1,7 +1,7 @@
+import { render } from '@testing-library/react'
 import { useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { render } from 'react-testing-library'
 import SEO from '../seo'
 
 describe('SEO', () => {
