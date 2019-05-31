@@ -1,6 +1,6 @@
+import { render } from '@testing-library/react'
 import { useStaticQuery } from 'gatsby'
 import React from 'react'
-import { render } from 'react-testing-library'
 import Image from '../image'
 
 describe('Image', () => {
