@@ -32,12 +32,13 @@
   },
   "devDependencies": {
     "@snowcoders/sortier": "2.6.2",
+    "@testing-library/cypress": "4.0.1",
+    "@testing-library/react": "8.0.1",
     "babel-jest": "24.8.0",
     "babel-plugin-emotion": "10.0.9",
     "babel-preset-gatsby": "0.1.11",
     "cross-env": "5.2.0",
     "cypress": "3.3.1",
-    "@testing-library/cypress": "4.0.0",
     "eslint": "5.16.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-react": "7.0.2",
@@ -56,7 +57,6 @@
     "lint-staged": "8.1.7",
     "npm-run-all": "4.1.5",
     "prettier-eslint-cli": "4.7.1",
-    "@testing-library/react": "8.0.1",
     "start-server-and-test": "1.9.1"
   },
   "husky": {
