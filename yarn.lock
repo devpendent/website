@@ -1076,9 +1076,9 @@
   version "1.5.6-b"
   resolved "https://registry.yarnpkg.com/@stefanprobst/lokijs/-/lokijs-1.5.6-b.tgz#6a36a86dbe132e702e6b15ffd3ce4139aebfe942"
 
-"@testing-library/cypress@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/cypress/-/cypress-4.0.1.tgz#3d1483f7c532a61a952768c50cc274c90e19b995"
+"@testing-library/cypress@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/cypress/-/cypress-4.0.2.tgz#d1503a73fbd91fd40aa14c2a27230820e487b4d2"
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@testing-library/dom" "^5.0.1"
