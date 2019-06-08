@@ -48,3 +48,4 @@ workflows:
           group: e2e tests # name this group "all tests" on the dashboard
           start: yarn serve:e2e # start server before running tests
           wait-on: http://localhost:8000 # wait for server to respond
+          store_artifacts: true # store screenshots and videos as a build artifacts
