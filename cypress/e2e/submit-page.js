@@ -64,7 +64,9 @@ describe('Submit Page', () => {
   })
 
   it('validates incorrect suara sah calculation correctly', () => {
-    cy.getByLabelText('Calon A').type('123')
+    cy.getByLabelText('Calon A')
+      .type('123')
+      .should('have.value', '123')
     cy.getByLabelText('Calon B').type('456')
     cy.getByLabelText('Sah').type('578')
 
@@ -82,7 +84,9 @@ describe('Submit Page', () => {
   })
 
   it('validates incorrect total calculation correctly', () => {
-    cy.getByLabelText('Calon A').type('123')
+    cy.getByLabelText('Calon A')
+      .type('123')
+      .should('have.value', '123')
     cy.getByLabelText('Calon B').type('456')
     cy.getByLabelText('Tidak Sah').type('21')
     cy.getByLabelText('Sah').type('579')
