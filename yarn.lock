@@ -4338,11 +4338,11 @@ eslint-module-utils@^2.4.0:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
 
-eslint-plugin-cypress@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.2.1.tgz#17295d8ef76984fe05886c7c5830ba216c1f9717"
+eslint-plugin-cypress@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.6.0.tgz#c726dd1a312cd5234de94765ca79718a14edf0ef"
   dependencies:
-    globals "^11.0.1"
+    globals "^11.12.0"
 
 eslint-plugin-es@^1.4.0:
   version "1.4.0"
@@ -5831,9 +5831,13 @@ global@^4.3.0, global@~4.3.0:
     min-document "^2.19.0"
     process "~0.5.1"
 
-globals@^11.0.1, globals@^11.1.0, globals@^11.7.0:
+globals@^11.1.0, globals@^11.7.0:
   version "11.11.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.11.0.tgz#dcf93757fa2de5486fbeed7118538adf789e9c2e"
+
+globals@^11.12.0:
+  version "11.12.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
 
 globby@9.2.0:
   version "9.2.0"
