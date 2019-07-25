@@ -65,27 +65,21 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "src/**/*.{js,json}": [
-        "prettier-eslint --write",
-        "npx sortier",
-        "git add",
-        "jest --findRelatedTests"
-      ],
-      "src/**/*.json": [
-        "prettier-eslint --write",
-        "npx sortier",
-        "git add"
-      ],
-      "gatsby-*.js": [
-        "prettier-eslint --write",
-        "git add",
-        "jest --findRelatedTests"
-      ]
-    },
-    "ignore": [
-      "**/package.json",
-      "**/yarn.lock"
+    "src/**/*.{js,json}": [
+      "prettier-eslint --write",
+      "npx sortier",
+      "git add",
+      "jest --findRelatedTests"
+    ],
+    "src/**/*.json": [
+      "prettier-eslint --write",
+      "npx sortier",
+      "git add"
+    ],
+    "gatsby-*.js": [
+      "prettier-eslint --write",
+      "git add",
+      "jest --findRelatedTests"
     ]
   },
   "keywords": [
