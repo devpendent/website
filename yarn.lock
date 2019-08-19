@@ -4617,15 +4617,17 @@ eslint-config-react-app@^3.0.0:
   dependencies:
     confusing-browser-globals "^1.0.6"
 
-eslint-config-standard-jsx@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-7.0.0.tgz#05c737d9eab524860fe6853cfd535045c3e07e5b"
-
-eslint-config-standard-react@8.0.0:
+eslint-config-standard-jsx@^8.0.0:
   version "8.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-8.0.0.tgz#567092a4142013046131f3d4c96d119d76392a7c"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-8.0.0.tgz#62607f2a7c0c47aed46d3a37ad7ebc73b6f7e869"
+  integrity sha512-Abs/WP+638KfkHI1J961yAztpMhYFvEMTqD4GMUZObAO9yOmLaQZlJY6xke1ty1+zhY4G58AuvHo3ht6avAEVQ==
+
+eslint-config-standard-react@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-9.0.0.tgz#f0c39ee566c0e1891775fb7de80ca597179f4a8e"
+  integrity sha512-nyjOpp1QpagJUyJyzbaGQN7UPgCv+O1gwtGn/R41nqquL6M5jlrNEMRbMgXg33pczi1Oh0E0b7SikGJ+WgVYFg==
   dependencies:
-    eslint-config-standard-jsx "^7.0.0"
+    eslint-config-standard-jsx "^8.0.0"
 
 eslint-config-standard@14.0.0:
   version "14.0.0"
