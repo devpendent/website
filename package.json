@@ -38,7 +38,7 @@
     "babel-jest": "24.9.0",
     "babel-plugin-emotion": "10.0.16",
     "babel-preset-gatsby": "0.2.11",
-    "cross-env": "5.2.0",
+    "cross-env": "5.2.1",
     "cypress": "3.4.1",
     "eslint": "6.3.0",
     "eslint-config-standard": "14.1.0",
