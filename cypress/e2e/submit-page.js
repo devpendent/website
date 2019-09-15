@@ -14,12 +14,12 @@ describe('Submit Page', () => {
   })
 
   it('validates required fields correctly', () => {
-    cy.getByLabelText('Calon A').type('abc')
-    cy.getByLabelText('Calon B').type('def')
-    cy.getByLabelText('Tidak Sah').type('ghi')
-    cy.getByLabelText('Sah').type('jkl')
-    cy.getByLabelText('Sah + Tidak Sah').type('mno')
-    cy.getByText('Kirim').click({ force: true })
+    cy.findByLabelText('Calon A').type('abc')
+    cy.findByLabelText('Calon B').type('def')
+    cy.findByLabelText('Tidak Sah').type('ghi')
+    cy.findByLabelText('Sah').type('jkl')
+    cy.findByLabelText('Sah + Tidak Sah').type('mno')
+    cy.findByText('Kirim').click({ force: true })
 
     cy.getFormItemByLabelText('Calon A').should('have.class', 'has-error')
     cy.getExplainByLabelText('Calon A').should(
@@ -52,14 +52,14 @@ describe('Submit Page', () => {
   })
 
   it('validates maximum digits correctly', () => {
-    cy.getByLabelText('Calon A').type('1234')
+    cy.findByLabelText('Calon A').type('1234')
     cy.getFormItemByLabelText('Calon A').should('have.class', 'has-error')
     cy.getExplainByLabelText('Calon A').should(
       'have.text',
       'Total suara tidak boleh melebihi 3 digit angka'
     )
 
-    cy.getByLabelText('Calon B').type('5678')
+    cy.findByLabelText('Calon B').type('5678')
     cy.getFormItemByLabelText('Calon B').should('have.class', 'has-error')
     cy.getExplainByLabelText('Calon B').should(
       'have.text',
@@ -68,9 +68,9 @@ describe('Submit Page', () => {
   })
 
   it('validates incorrect suara sah calculation correctly', () => {
-    cy.getByLabelText('Calon A').type('123')
-    cy.getByLabelText('Calon B').type('456')
-    cy.getByLabelText('Sah').type('578')
+    cy.findByLabelText('Calon A').type('123')
+    cy.findByLabelText('Calon B').type('456')
+    cy.findByLabelText('Sah').type('578')
 
     cy.getFormItemByLabelText('Sah').should('have.class', 'has-warning')
     cy.getExplainByLabelText('Sah').should(
@@ -78,7 +78,7 @@ describe('Submit Page', () => {
       'Perhitungan suara sah salah'
     )
 
-    cy.getByLabelText('Sah').type('{backspace}9')
+    cy.findByLabelText('Sah').type('{backspace}9')
     cy.getExplainByLabelText('Sah').should(
       'not.have.text',
       'Perhitungan suara sah salah'
@@ -86,11 +86,11 @@ describe('Submit Page', () => {
   })
 
   it('validates incorrect total calculation correctly', () => {
-    cy.getByLabelText('Calon A').type('123')
-    cy.getByLabelText('Calon B').type('456')
-    cy.getByLabelText('Tidak Sah').type('21')
-    cy.getByLabelText('Sah').type('579')
-    cy.getByLabelText('Sah + Tidak Sah').type('601')
+    cy.findByLabelText('Calon A').type('123')
+    cy.findByLabelText('Calon B').type('456')
+    cy.findByLabelText('Tidak Sah').type('21')
+    cy.findByLabelText('Sah').type('579')
+    cy.findByLabelText('Sah + Tidak Sah').type('601')
 
     cy.getFormItemByLabelText('Sah + Tidak Sah').should(
       'have.class',
@@ -101,7 +101,7 @@ describe('Submit Page', () => {
       'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
     )
 
-    cy.getByLabelText('Sah + Tidak Sah').type('{backspace}0')
+    cy.findByLabelText('Sah + Tidak Sah').type('{backspace}0')
     cy.getExplainByLabelText('Sah + Tidak Sah').should(
       'not.have.text',
       'Perhitungan jumlah seluruh suara sah dan suara tidak sah salah'
@@ -109,19 +109,19 @@ describe('Submit Page', () => {
   })
 
   it('submit the forms correctly', () => {
-    cy.getByLabelText('Calon A').type('123')
-    cy.getByLabelText('Calon B').type('456')
-    cy.getByLabelText('Tidak Sah').type('21')
-    cy.getByLabelText('Sah').type('579')
-    cy.getByLabelText('Sah + Tidak Sah').type('600')
+    cy.findByLabelText('Calon A').type('123')
+    cy.findByLabelText('Calon B').type('456')
+    cy.findByLabelText('Tidak Sah').type('21')
+    cy.findByLabelText('Sah').type('579')
+    cy.findByLabelText('Sah + Tidak Sah').type('600')
 
-    cy.getByLabelText('Calon A').should('have.value', '123')
-    cy.getByLabelText('Calon B').should('have.value', '456')
-    cy.getByLabelText('Tidak Sah').should('have.value', '21')
-    cy.getByLabelText('Sah').should('have.value', '579')
-    cy.getByLabelText('Sah + Tidak Sah').should('have.value', '600')
+    cy.findByLabelText('Calon A').should('have.value', '123')
+    cy.findByLabelText('Calon B').should('have.value', '456')
+    cy.findByLabelText('Tidak Sah').should('have.value', '21')
+    cy.findByLabelText('Sah').should('have.value', '579')
+    cy.findByLabelText('Sah + Tidak Sah').should('have.value', '600')
 
-    cy.getByText('Kirim').click({ force: true })
+    cy.findByText('Kirim').click({ force: true })
 
     cy.getExplainByLabelText('Calon A').should(
       'not.have.text',

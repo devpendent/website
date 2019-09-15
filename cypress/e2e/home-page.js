@@ -16,7 +16,7 @@ describe('Home Page', () => {
   })
 
   it('shows the Banner of devpendant apps', () => {
-    cy.getByText(meta.siteMetadata.title).should('be.visible')
+    cy.findByText(meta.siteMetadata.title).should('be.visible')
   })
 
   it('shows the title of devpendant apps', () => {
