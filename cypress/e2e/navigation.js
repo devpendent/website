@@ -18,7 +18,7 @@ describe('Navigation', () => {
       .getByText(/welcome to page 2/i)
       .should('be.visible')
 
-    cy.getByText(/homepage/i)
+    cy.findByText(/homepage/i)
       .click()
       .url()
       .should('eq', `${Cypress.config().baseUrl}`)

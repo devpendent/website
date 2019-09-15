@@ -19,7 +19,7 @@ describe('Submit Page', () => {
     cy.getByLabelText('Tidak Sah').type('ghi')
     cy.getByLabelText('Sah').type('jkl')
     cy.getByLabelText('Sah + Tidak Sah').type('mno')
-    cy.getByText('Kirim').click({ force: true })
+    cy.findByText('Kirim').click({ force: true })
 
     cy.getFormItemByLabelText('Calon A').should('have.class', 'has-error')
     cy.getExplainByLabelText('Calon A').should(
@@ -121,7 +121,7 @@ describe('Submit Page', () => {
     cy.getByLabelText('Sah').should('have.value', '579')
     cy.getByLabelText('Sah + Tidak Sah').should('have.value', '600')
 
-    cy.getByText('Kirim').click({ force: true })
+    cy.findByText('Kirim').click({ force: true })
 
     cy.getExplainByLabelText('Calon A').should(
       'not.have.text',
