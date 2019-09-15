@@ -26,15 +26,18 @@
 
 Cypress.Commands.add('getExplainByLabelText', labelText =>
   cy
-    .getByLabelText(labelText)
+    .findByLabelText(labelText)
     .closest('.ant-form-item-children')
-    .next())
+    .next()
+)
 
 Cypress.Commands.add('getExplainByTestId', testId =>
   cy
     .getByTestId(testId)
     .closest('.ant-form-item-children')
-    .next())
+    .next()
+)
 
 Cypress.Commands.add('getFormItemByLabelText', labelText =>
-  cy.getByLabelText(labelText).closest('.ant-form-item-control'))
+  cy.findByLabelText(labelText).closest('.ant-form-item-control')
+)
