@@ -31,7 +31,7 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "@snowcoders/sortier": "2.6.2",
+    "@snowcoders/sortier": "3.0.0",
     "@testing-library/cypress": "5.0.0",
     "@testing-library/jest-dom": "4.1.0",
     "@testing-library/react": "9.1.4",
