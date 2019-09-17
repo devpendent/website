@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@snowcoders/sortier": "3.0.0",
-    "@testing-library/cypress": "5.0.0",
+    "@testing-library/cypress": "5.0.1",
     "@testing-library/jest-dom": "4.1.0",
     "@testing-library/react": "9.1.4",
     "babel-jest": "24.9.0",
