@@ -49,7 +49,7 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-standard": "4.0.1",
-    "husky": "3.0.5",
+    "husky": "3.0.7",
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "1.1.1",
     "jest": "24.9.0",
