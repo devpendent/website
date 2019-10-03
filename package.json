@@ -34,7 +34,7 @@
     "@snowcoders/sortier": "3.0.0",
     "@testing-library/cypress": "5.0.1",
     "@testing-library/jest-dom": "4.1.0",
-    "@testing-library/react": "9.2.0",
+    "@testing-library/react": "9.3.0",
     "babel-jest": "24.9.0",
     "babel-plugin-emotion": "10.0.19",
     "babel-preset-gatsby": "0.2.17",
