@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "5.11.2",
     "@fortawesome/react-fontawesome": "0.1.7",
     "font-awesome": "4.7.0",
-    "gatsby": "2.17.17",
+    "gatsby": "2.18.0",
     "gatsby-image": "2.2.33",
     "gatsby-plugin-antd": "2.1.0",
     "gatsby-plugin-emotion": "4.1.15",
