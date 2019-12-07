@@ -1,4 +1,9 @@
 {
-  "extends": ["config:base", ":assignAndReview(zainfathoni)", ":label(chore)"],
+  "extends": [
+    "config:base",
+    ":assignAndReview(zainfathoni)",
+    ":label(chore)",
+    "schedule:monthly"
+  ],
   "automerge": true
 }
